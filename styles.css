@@ -6,3 +6,6 @@
 /* Six-tab iPhone navigation and RSVP form controls. */
 .tabbar button{min-width:0;flex:1;padding:3px 2px}.tabbar .tabicon{font-size:20px}.tabbar button span:last-child{font-size:10px}
 select.search{margin-top:6px;margin-bottom:4px}label[for^="rsvp-"]{display:block;margin-top:12px}
+
+/* Official NeurIPS media-kit artwork in header. */
+img.brand-logo{display:block;object-fit:contain;background:white;border-radius:10px;padding:2px}
