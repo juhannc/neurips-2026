@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#101b2a">
+<style>
+/* First paint: do not expose the iOS standalone status-bar region while CSS loads. */
+html,body{margin:0;background:#0b1522;color:#f2f6fa}
+.topbar{background:#0b1522}
+@media(display-mode:standalone){
+  .topbar{position:sticky;top:0;z-index:15;background:#0b1522}
+  .topbar::before{content:"";position:absolute;bottom:100%;left:0;right:0;height:100px;background:#0b1522;pointer-events:none}
+}
+</style>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="NeurIPS Guide">
