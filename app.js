@@ -136,7 +136,7 @@ function setDockCollapsed(collapsed){
  dockTabs.inert=collapsed;
 }
 dockExpand?.addEventListener('click',()=>setDockCollapsed(!dock.classList.contains('is-collapsed')));
-let previousScrollY=Math.max(0,window.scrollY),pendingScroll=false;
+let previousScrollY=Math.max(0,window.scrollY),scrollDistance=0,scrollDirection=0,pendingScroll=false;
 window.addEventListener('scroll',()=>{
  if(pendingScroll)return;
  pendingScroll=true;
@@ -145,9 +145,15 @@ window.addEventListener('scroll',()=>{
   const y=Math.max(0,window.scrollY),delta=y-previousScrollY;
   previousScrollY=y;
   if(!dock || !$('#overlay').classList.contains('hidden'))return;
-  if(y<64){setDockCollapsed(false);return}
-  if(delta>9 && y>160)setDockCollapsed(true);
-  else if(delta< -9)setDockCollapsed(false);
+  if(y<64){scrollDistance=0;setDockCollapsed(false);return}
+  const direction=Math.sign(delta);
+  if(!direction)return;
+  if(direction!==scrollDirection){scrollDirection=direction;scrollDistance=0}
+  scrollDistance+=Math.abs(delta);
+  if(scrollDistance<32)return;
+  scrollDistance=0;
+  if(direction>0 && y>160)setDockCollapsed(true);
+  else if(direction<0)setDockCollapsed(false);
  });
 },{passive:true});
 window.addEventListener('pageshow',()=>setDockCollapsed(false));
