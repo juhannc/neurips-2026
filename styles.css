@@ -90,61 +90,65 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
   }
 }
 
-/* iOS-style floating glass dock. The entire bar stays within the Home Indicator safe area. */
+/* Floating iOS-like glass selector. Frosted and edge-lit, not a solid toolbar. */
 .glass-dock{
-  position:fixed;z-index:12;
-  left:50%;right:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);
-  transform:translateX(-50%);
-  width:min(560px,calc(100% - 24px));max-width:560px;
-  padding:6px;display:block;
-  border:1px solid rgba(223,239,255,.2);
-  border-radius:27px;
-  background:rgba(38,55,73,.68);
-  -webkit-backdrop-filter:saturate(180%) blur(32px);
-  backdrop-filter:saturate(180%) blur(32px);
-  box-shadow:0 12px 40px rgba(0,0,0,.36),inset 0 1px rgba(255,255,255,.14);
-  overflow:hidden;
-  transition:width .3s cubic-bezier(.2,.8,.2,1),border-radius .3s ease,background .3s ease;
+ position:fixed;z-index:12;left:50%;right:auto;
+ bottom:calc(env(safe-area-inset-bottom,0px) + 12px);
+ transform:translateX(-50%);
+ width:min(568px,calc(100% - 28px));max-width:568px;
+ padding:5px;display:block;overflow:hidden;isolation:isolate;
+ border-radius:30px;
+ border:1px solid rgba(232,244,255,.3);
+ background:linear-gradient(145deg,rgba(219,237,255,.19),rgba(123,158,196,.13) 48%,rgba(209,226,251,.18));
+ -webkit-backdrop-filter:blur(26px) saturate(190%) brightness(1.12);
+ backdrop-filter:blur(26px) saturate(190%) brightness(1.12);
+ box-shadow:0 12px 38px rgba(0,0,0,.28),0 2px 9px rgba(0,0,0,.12),inset 0 1px 1px rgba(255,255,255,.53),inset 0 -1px 1px rgba(236,250,255,.13);
+ transition:width .28s cubic-bezier(.22,1,.36,1),border-radius .28s ease,box-shadow .28s ease;
 }
 .glass-dock::before{
-  content:"";position:absolute;pointer-events:none;inset:0 0 auto;height:45%;
-  background:linear-gradient(180deg,rgba(255,255,255,.09),transparent);
-  border-radius:inherit;
+ content:"";position:absolute;pointer-events:none;z-index:-1;
+ inset:1px;border-radius:inherit;
+ background:linear-gradient(175deg,rgba(255,255,255,.18),rgba(255,255,255,0) 45%,rgba(255,255,255,.065));
 }
-.glass-dock .dock-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;position:relative}
+.glass-dock::after{
+ content:"";position:absolute;pointer-events:none;z-index:0;
+ top:1px;left:12%;right:12%;height:1px;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
+}
+.glass-dock .dock-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;position:relative;z-index:1}
 .glass-dock .dock-tabs>button{
-  min-width:0;min-height:53px;display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:3px;position:relative;padding:6px 1px;
-  border:0;border-radius:19px;background:transparent;color:#bfc9d5;
-  font-weight:600;font-size:10px;line-height:1.1;
-  transition:background .2s ease,color .2s ease,transform .2s ease;
+ min-width:0;min-height:52px;display:flex;align-items:center;justify-content:center;
+ flex-direction:column;gap:3px;position:relative;padding:6px 1px;
+ border:1px solid transparent;border-radius:23px;
+ background:transparent;color:rgba(236,246,255,.78);
+ font-weight:600;font-size:10px;line-height:1.1;
+ transition:background .18s ease,color .18s ease,transform .18s ease;
 }
 .glass-dock .dock-tabs>button.active{
-  background:rgba(197,225,255,.18);color:#fff;
-  box-shadow:inset 0 1px rgba(255,255,255,.16),0 2px 12px rgba(4,12,25,.12);
+ background:linear-gradient(145deg,rgba(255,255,255,.3),rgba(184,221,247,.15));
+ border-color:rgba(239,250,255,.2);
+ color:#fff;
+ box-shadow:inset 0 1px rgba(255,255,255,.2),0 2px 12px rgba(5,18,35,.15);
 }
-.glass-dock .dock-tabs>button:active{transform:scale(.95)}
-.glass-dock .dock-tabs>button:focus-visible,.glass-dock .dock-collapse-button:focus-visible{outline:2px solid #80e6d0;outline-offset:-2px}
+.glass-dock .dock-tabs>button:active{transform:scale(.96)}
+.glass-dock .dock-tabs>button:focus-visible,.glass-dock .dock-collapse-button:focus-visible{outline:2px solid #a7fff0;outline-offset:-3px}
 .glass-dock .dock-tabs .tabicon{display:flex;align-items:center;justify-content:center;line-height:1}
 .glass-dock .dock-icon{display:block;width:23px;height:23px;flex:none}
-.glass-dock .dock-tab-label{font-size:10px;white-space:nowrap;letter-spacing:-.2px}
+.glass-dock .dock-tab-label{font-size:10px;white-space:nowrap;letter-spacing:-.15px}
 .glass-dock .dock-collapse-button{
-  display:none;align-items:center;justify-content:center;gap:9px;
-  min-height:44px;width:100%;border:0;border-radius:23px;
-  background:transparent;color:#f3f7fc;font-size:13px;font-weight:700;
+ display:none;position:relative;z-index:1;align-items:center;justify-content:center;gap:9px;
+ min-height:43px;width:100%;border:0;border-radius:999px;background:transparent;
+ color:#f8fcff;font-size:13px;font-weight:700;
 }
 .glass-dock .dock-collapse-icon{display:flex;align-items:center}
-.glass-dock .dock-collapse-icon .dock-icon{width:19px;height:19px}
-.glass-dock .dock-expand-chevron{width:15px;height:15px;opacity:.7;margin-left:3px}
-.glass-dock.is-collapsed{width:160px;border-radius:999px}
+.glass-dock .dock-collapse-icon .dock-icon{width:20px;height:20px}
+.glass-dock .dock-expand-chevron{width:14px;height:14px;opacity:.65;margin-left:2px}
+.glass-dock.is-collapsed{width:154px;border-radius:999px}
 .glass-dock.is-collapsed .dock-tabs{display:none}
 .glass-dock.is-collapsed .dock-collapse-button{display:flex}
-@supports not ((backdrop-filter:blur(10px)) or (-webkit-backdrop-filter:blur(10px))){
-  .glass-dock{background:#25394d}
-}
-@media (prefers-reduced-transparency:reduce){.glass-dock{background:#233749;-webkit-backdrop-filter:none;backdrop-filter:none}}
-@media (prefers-reduced-motion:reduce){.glass-dock,.glass-dock .dock-tabs>button{transition:none}}
-@media(min-width:740px){.glass-dock{left:50%;right:auto;transform:translateX(-50%);border-radius:27px}}
-@media(max-width:355px){.glass-dock{width:calc(100% - 14px);padding:5px}.glass-dock .dock-tab-label{font-size:9px}.glass-dock .dock-icon{width:21px;height:21px}.glass-dock.is-collapsed{width:160px}}
-/* Reserve room behind the floating dock even near the bottom of long calendars. */
+@supports not ((backdrop-filter:blur(10px)) or (-webkit-backdrop-filter:blur(10px))){.glass-dock{background:rgba(44,65,89,.94)}}
+@media(prefers-reduced-transparency:reduce){.glass-dock{background:#31485e;-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.glass-dock,.glass-dock .dock-tabs>button{transition:none}}
+@media(min-width:740px){.glass-dock{left:50%;right:auto;transform:translateX(-50%)}}
+@media(max-width:355px){.glass-dock{width:calc(100% - 16px);padding:4px}.glass-dock .dock-tab-label{font-size:9px}.glass-dock .dock-icon{width:21px;height:21px}.glass-dock.is-collapsed{width:154px}}
 main{padding-bottom:calc(115px + env(safe-area-inset-bottom,0px))}
