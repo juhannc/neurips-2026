@@ -20,12 +20,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Create official NeurIPS PWA icons
         run: |
-          python3 -m pip install --disable-pip-version-check Pillow
+          python3 -m pip install --disable-pip-version-check Pillow CairoSVG
           python3 scripts/generate_icons.py
       - name: Verify static PWA
         run: |
-          test -s assets/neurips-logo-header.svg
-          grep -q '<svg' assets/neurips-logo-header.svg
+          test -s assets/neurips-dots.svg
+          grep -q '<svg' assets/neurips-dots.svg
           node tests/calendar-layout.test.cjs
           node --check app.js
           node --check sw.js
