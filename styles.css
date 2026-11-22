@@ -9,3 +9,8 @@ select.search{margin-top:6px;margin-bottom:4px}label[for^="rsvp-"]{display:block
 
 /* Official NeurIPS media-kit artwork in header. */
 img.brand-logo{display:block;object-fit:contain;background:white;border-radius:10px;padding:2px}
+
+/* Personal guide: no promotional hero; keep a compact time and location row. */
+.home-intro{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0 8px}
+/* Treat the official NeurIPS artwork as an image, not a lettermark badge. */
+.topbar .brand img.brand-logo{display:block;width:44px;height:44px;min-width:44px;padding:3px;background:#fff;border-radius:11px;object-fit:contain;letter-spacing:normal;box-sizing:border-box}
