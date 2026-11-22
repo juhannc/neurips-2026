@@ -14,3 +14,8 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
 .home-intro{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0 8px}
 /* Treat the official NeurIPS artwork as an image, not a lettermark badge. */
 .topbar .brand img.brand-logo{display:block;width:44px;height:44px;min-width:44px;padding:3px;background:#fff;border-radius:11px;object-fit:contain;letter-spacing:normal;box-sizing:border-box}
+
+/* Official uncached NeurIPS wordmark in the application header. */
+.topbar .brand img.brand-logo.official-header-logo{width:112px;height:48px;min-width:112px;max-width:112px;object-fit:contain;background:#fff;padding:3px;border-radius:10px;box-sizing:border-box}
+@media(max-width:370px){.topbar .brand img.brand-logo.official-header-logo{width:92px;min-width:92px;height:42px}.brand-title{font-size:18px}.eyebrow{font-size:8px}}
+.venue-map-link{cursor:pointer;color:var(--ink);border:1px solid var(--line);text-decoration:none}.venue-map-link:hover,.venue-map-link:focus-visible{color:var(--mint);border-color:var(--mint);text-decoration:none}
