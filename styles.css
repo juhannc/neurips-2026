@@ -183,3 +183,27 @@ main{padding-bottom:calc(115px + env(safe-area-inset-bottom,0px))}
  .glass-dock.is-collapsed{width:54px;height:54px;padding:5px}
  .glass-dock .dock-collapse-icon .dock-icon{width:23px;height:23px}
 }
+
+/* iOS 26/27 installed PWA: keep a solid painted surface against the system's
+   top-edge material instead of letting scrolling content show through it.
+   Sticky works from first load and doesn't introduce an inner scroll trap. */
+@media (display-mode:standalone){
+  .topbar{
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    z-index:15;
+    background:#0b1522;
+    box-shadow:0 1px 0 rgba(255,255,255,.04);
+    isolation:isolate;
+  }
+  .topbar::before{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:100%;
+    height:max(100px,env(safe-area-inset-top,0px));
+    background:#0b1522;
+    pointer-events:none;
+  }
+  .topbar .brand,.topbar #menuButton{position:relative;z-index:1}
+}
