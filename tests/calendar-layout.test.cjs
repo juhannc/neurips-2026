@@ -16,7 +16,7 @@ test('direct overlaps receive separate columns, touching events can reuse a colu
  const b=result.entries.find(v=>v.event.id==='late');
  const c=result.entries.find(v=>v.event.id==='after');
  assert.notEqual(a.column,b.column);
- assert.equal(c.column,b.column);
+ assert.equal(c.column,a.column);
 });
 test('simultaneous sessions are visible in independent lanes',()=>{
  const data=plan([e('Research Exchange','18:00','22:00'),e('Intel Rooftop','18:00','21:00'),e('Poster Session 2','17:00','20:00')]);
