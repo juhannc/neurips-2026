@@ -74,3 +74,6 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
 /* The header uses only the dotted NeurIPS mark. */
 .topbar .brand img.brand-logo.official-header-logo{width:44px;height:44px;min-width:44px;max-width:44px;padding:3px;object-fit:contain}
 @media(max-width:370px){.topbar .brand img.brand-logo.official-header-logo{width:40px;height:40px;min-width:40px;max-width:40px}}
+
+/* Dark NeurIPS dotted mark for the app header. */
+.topbar .brand img.brand-logo.official-header-logo{background:#101b2a;border:1px solid #29374a;padding:3px;border-radius:11px}
