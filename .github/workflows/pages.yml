@@ -24,6 +24,8 @@ jobs:
           python3 scripts/generate_icons.py
       - name: Verify static PWA
         run: |
+          test -s assets/neurips-official-header-2026.svg
+          grep -q '<svg' assets/neurips-official-header-2026.svg
           node --check app.js
           node --check sw.js
           node tests/calendar.test.cjs
