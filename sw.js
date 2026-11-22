@@ -1,4 +1,4 @@
-const CACHE='neurips-sydney-guide-v11';
+const CACHE='neurips-sydney-guide-v12';
 const ASSETS=['./','./index.html','./calendar-layout.js','./styles.css','./app.js','./guide.json','./registrations.json','./manifest.webmanifest','./assets/neurips-dots-dark.svg?v=4','./assets/icon-192.png?v=dark4','./assets/icon-512.png?v=dark4','./assets/icon-180.png?v=dark4','./NeurIPS_Focus.ics','./NeurIPS_Master.ics','./NeurIPS_Posters.ics'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
