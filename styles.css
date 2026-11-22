@@ -152,3 +152,34 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
 @media(min-width:740px){.glass-dock{left:50%;right:auto;transform:translateX(-50%)}}
 @media(max-width:355px){.glass-dock{width:calc(100% - 16px);padding:4px}.glass-dock .dock-tab-label{font-size:9px}.glass-dock .dock-icon{width:21px;height:21px}.glass-dock.is-collapsed{width:154px}}
 main{padding-bottom:calc(115px + env(safe-area-inset-bottom,0px))}
+
+/* Compact Apple-style selector: same 23px icon, anchored to the expanded dock's left edge. */
+.glass-dock{
+ left:max(14px,calc((100% - 568px)/2));
+ right:auto;
+ transform:none;
+}
+.glass-dock.is-collapsed{
+ width:54px;
+ height:54px;
+ border-radius:19px;
+ padding:5px;
+}
+.glass-dock.is-collapsed .dock-collapse-button{
+ width:42px;
+ height:42px;
+ min-height:42px;
+ padding:0;
+ gap:0;
+ border-radius:14px;
+}
+.glass-dock .dock-collapse-icon .dock-icon{width:23px;height:23px}
+.glass-dock .dock-collapse-label,.glass-dock .dock-expand-chevron{display:none}
+@media(min-width:740px){
+ .glass-dock{left:max(14px,calc((100% - 568px)/2));transform:none}
+}
+@media(max-width:355px){
+ .glass-dock{left:8px}
+ .glass-dock.is-collapsed{width:54px;height:54px;padding:5px}
+ .glass-dock .dock-collapse-icon .dock-icon{width:23px;height:23px}
+}
