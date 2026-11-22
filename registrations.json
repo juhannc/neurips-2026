@@ -1,1 +1,200 @@
-[{"id":"probe","title":"probe"}]
+[
+  {
+    "id": "research-exchange",
+    "title": "Optiver × NVIDIA × Anthropic — The Research Exchange",
+    "day": "2026-12-08",
+    "time": "18:00–22:00",
+    "priority": 1,
+    "defaultStatus": "scheduled",
+    "action": "Verify your invitation and venue",
+    "url": "",
+    "conflict": "Conflicts with Intel Rooftop and Session 2"
+  },
+  {
+    "id": "nvidia-celebration",
+    "title": "NVIDIA Researcher Celebration",
+    "day": "2026-12-10",
+    "time": "18:00–22:00",
+    "priority": 1,
+    "defaultStatus": "scheduled",
+    "action": "Verify host approval and venue",
+    "url": "https://luma.com/neurips-research-celebration",
+    "conflict": "Conflicts with GSA dinner and Session 6"
+  },
+  {
+    "id": "intel-rooftop",
+    "title": "Intel AI Rooftop",
+    "day": "2026-12-08",
+    "time": "18:00–21:00",
+    "priority": 4,
+    "defaultStatus": "scheduled",
+    "action": "Verify invite and venue",
+    "url": "",
+    "conflict": "Conflicts with Research Exchange"
+  },
+  {
+    "id": "optiver-play",
+    "title": "Optiver — Intelligence at Play",
+    "day": "2026-12-09",
+    "time": "Time unconfirmed",
+    "priority": 2,
+    "defaultStatus": "scheduled",
+    "action": "Confirm time and venue; only attend after your poster if possible",
+    "url": "",
+    "conflict": "Your autoSAFE poster runs 17:00–20:00"
+  },
+  {
+    "id": "gsa-dinner",
+    "title": "GSA Capital — Late Fusion Dinner",
+    "day": "2026-12-10",
+    "time": "19:00–22:00",
+    "priority": 2,
+    "defaultStatus": "todo",
+    "action": "Apply for host approval",
+    "url": "https://luma.com/qekw5st2",
+    "conflict": "Conflicts with NVIDIA celebration"
+  },
+  {
+    "id": "breakthrough",
+    "title": "Together AI × NVIDIA — Breakthrough Island",
+    "day": "2026-12-08",
+    "time": "18:00–22:00",
+    "priority": 2,
+    "defaultStatus": "todo",
+    "action": "Request approval and confirm ferry logistics",
+    "url": "https://luma.com/breakthroughisland-neurips",
+    "conflict": "Conflicts with Research Exchange"
+  },
+  {
+    "id": "airtree",
+    "title": "Airtree Ventures — Off the Record",
+    "day": "2026-12-09",
+    "time": "18:00–22:00",
+    "priority": 3,
+    "defaultStatus": "waitlist",
+    "action": "Join waitlist; attend after your poster only",
+    "url": "https://luma.com/a9fnug18",
+    "conflict": "AutoSAFE poster until 20:00"
+  },
+  {
+    "id": "ai-infra",
+    "title": "AI Infra Builders — SGLang × Oracle",
+    "day": "2026-12-08",
+    "time": "19:00–21:00",
+    "priority": 4,
+    "defaultStatus": "todo",
+    "action": "Apply only as a backup",
+    "url": "https://luma.com/sglang-ikbr",
+    "conflict": "Research Exchange overlaps"
+  },
+  {
+    "id": "ubiquant",
+    "title": "IQuest × Ubiquant — Frontier AI Harbour Event",
+    "day": "2026-12-09",
+    "time": "20:00 option; verify",
+    "priority": 3,
+    "defaultStatus": "todo",
+    "action": "Apply and verify evening session",
+    "url": "https://www.wjx.cn/vm/tRsGh3S.aspx",
+    "conflict": "Earlier sessions conflict with your poster"
+  },
+  {
+    "id": "ai-safety-social",
+    "title": "Alignment After Hours — AI Safety Networking",
+    "day": "2026-12-10",
+    "time": "18:30–21:30",
+    "priority": 2,
+    "defaultStatus": "waitlist",
+    "action": "Check whether waitlist reopens",
+    "url": "https://qrsntu.org/service/neurips26/socials/",
+    "conflict": "NVIDIA celebration overlaps"
+  },
+  {
+    "id": "gmi",
+    "title": "GMI Cloud × Qwen × vLLM × NVIDIA",
+    "day": "2026-12-08",
+    "time": "19:00–22:30",
+    "priority": 4,
+    "defaultStatus": "todo",
+    "action": "Check RSVP if preferred events unavailable",
+    "url": "https://qrsntu.org/service/neurips26/socials/",
+    "conflict": "Research Exchange overlaps"
+  },
+  {
+    "id": "dead-reckoning",
+    "title": "Dead Reckoning — Researcher Happy Hour",
+    "day": "2026-12-08",
+    "time": "18:00–21:00",
+    "priority": 4,
+    "defaultStatus": "todo",
+    "action": "Check registration as backup",
+    "url": "https://qrsntu.org/service/neurips26/socials/",
+    "conflict": "Research Exchange overlaps"
+  },
+  {
+    "id": "robot-learning",
+    "title": "Robot Learning Workshop — poster presentation",
+    "day": "2026-12-11",
+    "time": "12:50–14:20 (session window)",
+    "priority": 1,
+    "defaultStatus": "todo",
+    "action": "Confirm your individual Friday poster assignment",
+    "url": "https://www.robot-learning.ml/2026/schedule/",
+    "conflict": "Protected presentation"
+  },
+  {
+    "id": "tae",
+    "title": "TAE — poster assignment",
+    "day": "2026-12-12",
+    "time": "11:00–12:00 or 14:15–15:00",
+    "priority": 1,
+    "defaultStatus": "todo",
+    "action": "Ask organizers which session includes your paper",
+    "url": "https://tai-eval.github.io/schedule/",
+    "conflict": "Do not block both as confirmed"
+  },
+  {
+    "id": "conference",
+    "title": "Conference badge and workshop access",
+    "day": "2026-12-06",
+    "time": "Before arrival",
+    "priority": 1,
+    "defaultStatus": "todo",
+    "action": "Confirm your QR/badge and workshop access",
+    "url": "https://neurips.cc/Conferences/2026",
+    "conflict": "Required for entry"
+  },
+  {
+    "id": "formal",
+    "title": "Formal Guarantees for Frontier AI Systems",
+    "day": "2026-12-07",
+    "time": "14:00–17:00",
+    "priority": 1,
+    "defaultStatus": "todo",
+    "action": "Check conference access requirements",
+    "url": "https://qrsntu.org/service/neurips26/event/137740/",
+    "conflict": "Strong alignment with autoSAFE"
+  },
+  {
+    "id": "jump",
+    "title": "Jump Trading — Adapting AI Research to Quantitative Finance",
+    "day": "2026-12-06",
+    "time": "18:00–19:00",
+    "priority": 2,
+    "defaultStatus": "todo",
+    "action": "Check entry via conference registration",
+    "url": "https://qrsntu.org/service/neurips26/event/180197/",
+    "conflict": "Expo Day"
+  },
+  {
+    "id": "two-sigma",
+    "title": "Two Sigma — One Market, Many Clocks",
+    "day": "2026-12-06",
+    "time": "13:00–14:00",
+    "priority": 2,
+    "defaultStatus": "todo",
+    "action": "Check access via conference badge",
+    "url": "https://qrsntu.org/service/neurips26/event/180212/",
+    "conflict": "Competes with other expo talks"
+  }
+]
