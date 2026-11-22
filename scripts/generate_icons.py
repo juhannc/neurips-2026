@@ -1,27 +1,25 @@
 #!/usr/bin/env python3
-"""Generate PWA / iOS home screen assets from the official NeurIPS media-kit logo.
+"""Render the official NeurIPS dotted mark as PWA and iOS icons.
 
-Source: https://neurips.cc/public/MediaKit
-The conference logo is not original artwork of this project.
+The icon artwork is copied from the NeurIPS SVG in assets/neurips-dots.svg.
+No dependency on an external server during deployment.
 """
-from pathlib import Path
 from io import BytesIO
-from urllib.request import Request, urlopen
+from pathlib import Path
+
+import cairosvg
 from PIL import Image
 
-SOURCE = "https://neurips.cc/media/Press/NeurIPS_logo_stacked.png"
-ASSETS = Path("assets")
-ASSETS.mkdir(exist_ok=True)
-request = Request(SOURCE, headers={"User-Agent": "NeurIPS-2026-PWA/1.0"})
-with urlopen(request, timeout=35) as response:
-    raw = response.read()
-original = Image.open(BytesIO(raw)).convert("RGBA")
-if original.width < 400 or original.height < 400:
-    raise RuntimeError("Unexpected logo dimensions, refusing to overwrite icons")
+assets = Path("assets")
+source = assets / "neurips-dots.svg"
+if not source.is_file():
+    raise SystemExit("Missing original NeurIPS dotted logo SVG")
 for size in (180, 192, 512):
-    image = original.copy()
-    image.thumbnail((size, size), Image.Resampling.LANCZOS)
-    canvas = Image.new("RGBA", (size, size), "white")
-    canvas.alpha_composite(image, ((size - image.width) // 2, (size - image.height) // 2))
-    canvas.convert("RGB").save(ASSETS / f"icon-{size}.png", optimize=True)
-print('Generated the NeurIPS app icons from the official media-kit PNG')
+    # Keep a comfortable optical margin and a white iOS Home Screen background.
+    symbol_size = round(size * 0.82)
+    png = cairosvg.svg2png(url=str(source), output_width=symbol_size, output_height=symbol_size)
+    icon = Image.new("RGBA", (size, size), "#ffffff")
+    symbol = Image.open(BytesIO(png)).convert("RGBA")
+    icon.alpha_composite(symbol, ((size - symbol_size) // 2, (size - symbol_size) // 2))
+    icon.convert("RGB").save(assets / f"icon-{size}.png", optimize=True)
+print("Created NeurIPS dotted-symbol PWA icons: 180, 192, 512")
