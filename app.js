@@ -54,35 +54,34 @@ function dayChips(){return `<div class="chips">${DAYS.map((d,i)=>`<button class=
 // Day timeline: group long sessions separately so they don't obscure shorter overlaps.
 function renderTimeline(events) {
  const engine=window.NeuroCalendar;
- if(!engine)return '<div class="warning">Calendar view is unavailable. Please refresh the app.</div>';
- const long=events.filter(e=>engine.isTimed(e) && (engine.minutes(e.end)-engine.minutes(e.start)>=330) && ['Expo','Workshop'].includes(e.category));
- const shorter=events.filter(e=>!long.includes(e));
- const layout=engine.plan(shorter), entries=layout.entries;
- const extras=[...long,...layout.untimed];
- if(!entries.length&&!extras.length)return '<div class="empty">No events match these filters.</div>';
- const base=entries.length?Math.floor(Math.min(...entries.map(e=>e.start))/60)*60:480;
- const last=entries.length?Math.ceil(Math.max(...entries.map(e=>e.end))/60)*60:1320;
- const hourHeight=72; const duration=last-base;
- const height=Math.max(hourHeight, duration/60*hourHeight);
- const columns=layout.maxColumns; const width=Math.max(320,56+columns*164);
+ if(!engine)return '<div class="warning">Calendar view unavailable. Reload while online.</div>';
+ const long=events.filter(e=>engine.isTimed(e)&&(engine.minutes(e.end)-engine.minutes(e.start)>=330)&&['Expo','Workshop'].includes(e.category));
+ const regular=events.filter(e=>!long.includes(e));
+ const layout=engine.plan(regular),entries=layout.entries;
+ const untimed=layout.untimed;
+ if(!entries.length&&!long.length&&!untimed.length)return '<div class="empty">No events match these filters.</div>';
+ const timed=[...entries,...long.map(event=>({start:engine.minutes(event.start),end:engine.minutes(event.end)}))];
+ const base=timed.length?Math.floor(Math.min(...timed.map(e=>e.start))/60)*60:480;
+ const last=timed.length?Math.ceil(Math.max(...timed.map(e=>e.end))/60)*60:1080;
+ const hourHeight=80,topPad=24, bottomPad=22;
+ const duration=Math.max(60,last-base);
+ const height=topPad+duration/60*hourHeight+bottomPad;
+ const pos=min=>topPad+(min-base)/60*hourHeight;
  const hours=Array.from({length:Math.floor(duration/60)+1},(_,i)=>base+i*60);
- const sortedExtras=extras.sort((a,b)=>(a.start||'99:99').localeCompare(b.start||'99:99'));
- return `<div class="timeline-explainer"><span class="timeline-key"><i class="key-dot presentation"></i> Your presentations</span><span class="timeline-key"><i class="key-dot networking"></i> Networking</span><span class="timeline-key"><i class="key-dot tentative"></i> Tentative</span></div>
- <p class="small muted">Events sharing a time range appear alongside each other. Scroll horizontally when several events overlap; tap a block for details.</p>
- ${entries.length?`<div class="calendar-scroll" role="region" tabindex="0" aria-label="Day calendar timeline, scroll horizontally for concurrent events">
- <div class="calendar-grid" style="height:${height}px;min-width:${width}px">
- ${hours.map(min=>`<div class="calendar-hour" style="top:${(min-base)/60*hourHeight}px"><time>${String(Math.floor(min/60)).padStart(2,'0')}:00</time></div>`).join('')}
- ${entries.map(({event:e,start,end,column,columns:laneCount})=>{
- const left=56+column*164;
- const top=(start-base)/60*hourHeight;
+ return `<div class="timeline-explainer"><span class="timeline-key"><i class="key-dot presentation"></i>Your presentations</span><span class="timeline-key"><i class="key-dot networking"></i>Networking</span><span class="timeline-key"><i class="key-dot tentative"></i>Tentative</span></div>
+ <p class="small muted">Overlaps appear side by side. Up to three events fit across the phone screen. Tap any event for details.</p>
+ ${timed.length?`<div class="calendar-scroll" aria-label="Day calendar timeline">
+ <div class="calendar-grid" style="height:${height}px">
+ ${hours.map(min=>`<div class="calendar-hour" style="top:${pos(min)}px"><time>${String(Math.floor(min/60)).padStart(2,'0')}:00</time></div>`).join('')}
+ ${long.map(e=>`<button class="calendar-background-session" style="top:${pos(engine.minutes(e.start))}px;height:${(engine.minutes(e.end)-engine.minutes(e.start))/60*hourHeight-3}px" data-open="event:${escapeHTML(e.id)}" aria-label="${escapeHTML(e.title+' '+e.start+'–'+e.end)}"><span>${escapeHTML(e.start)}–${escapeHTML(e.end)} · ${escapeHTML(e.title)}</span></button>`).join('')}
+ ${entries.map(({event:e,start,end,column,columns})=>{
  const eventHeight=Math.max(25,(end-start)/60*hourHeight-3);
- const protectedEvent=e.title.includes('PRESENT autoSAFE') || e.title.includes('YOUR workshop paper') || (e.category==='Presentation');
+ const protectedEvent=e.category==='Presentation'||e.title.includes('PRESENT autoSAFE')||e.title.includes('YOUR workshop paper');
  const kind=protectedEvent?'presentation':String(e.category||'').toLowerCase();
  const tentative=['suggested','verify','tentative'].includes(e.status);
- const short=eventHeight<52;
- return `<button class="calendar-event ${escapeHTML(kind)} ${tentative?'tentative':''} ${short?'compact':''}" style="top:${top}px;height:${eventHeight}px;left:${left}px;width:158px" data-open="event:${escapeHTML(e.id)}" title="${escapeHTML(e.title+' · '+e.start+'–'+e.end)}" aria-label="${escapeHTML(e.start+' to '+e.end+', '+e.title)}"><span class="calendar-event-time">${escapeHTML(e.start)}–${escapeHTML(e.end)}</span><span class="calendar-event-name">${escapeHTML(e.title)}</span>${eventHeight>76?`<span class="calendar-event-place">${escapeHTML(e.location||'Venue to confirm')}</span>`:''}</button>`;
+ return `<button class="calendar-event ${escapeHTML(kind)} ${tentative?'tentative':''} ${eventHeight<55?'compact':''}" style="top:${pos(start)}px;height:${eventHeight}px;--calendar-column:${column};--calendar-columns:${columns}" data-open="event:${escapeHTML(e.id)}" title="${escapeHTML(e.title+' '+e.start+'–'+e.end)}" aria-label="${escapeHTML(e.start+' to '+e.end+', '+e.title)}"><span class="calendar-event-time">${escapeHTML(e.start)}–${escapeHTML(e.end)}</span><span class="calendar-event-name">${escapeHTML(e.title)}</span>${eventHeight>110?`<span class="calendar-event-place">${escapeHTML(e.location||'Venue to confirm')}</span>`:''}</button>`;
  }).join('')}</div></div>`:''}
- ${extras.length?`<div class="headrow"><h3>Long-running sessions & times to confirm</h3></div><div class="calendar-extras">${sortedExtras.map(e=>`<button class="calendar-extra" data-open="event:${escapeHTML(e.id)}"><span class="calendar-extra-time">${escapeHTML(e.start?e.start+'–'+e.end:'Time TBC')}</span><span>${escapeHTML(e.title)}</span></button>`).join('')}</div>`:''}`;
+ ${untimed.length?`<div class="headrow"><h3>Time to confirm</h3></div><div class="calendar-extras">${untimed.map(e=>`<button class="calendar-extra" data-open="event:${escapeHTML(e.id)}"><span class="calendar-extra-time">Time TBC</span><span>${escapeHTML(e.title)}</span></button>`).join('')}</div>`:''}`;
 }
 function renderSchedule(){
  const choices=['all','Presentation','Posters','Networking','Research','Workshop','Expo'];
@@ -96,7 +95,7 @@ function renderSchedule(){
  <div class="schedule-top-controls"><div class="view-toggle" role="group" aria-label="Schedule display mode">${views.map(([value,label])=>`<button class="view-choice ${state.scheduleView===value?'active':''}" data-scheduleview="${value}" aria-pressed="${state.scheduleView===value}">${label}</button>`).join('')}</div><button class="btn secondary sm" data-export-all>All events (.ics)</button></div>
  <h2>${escapeHTML(fmtDay(state.day))}</h2>
  ${state.scheduleView==='calendar'?renderTimeline(evs):eventList(evs)}
- <div class="warning">Workshop presentation times are program windows, not confirmed individual assignments. Wednesday 17:00–20:00 is reserved for your own poster.</div>`;
+`;
 }
 function renderPosters(){let ps=guide.posters.filter(p=>(state.session==='all'||String(p.session)===state.session)&&(p.title+' '+p.reason).toLowerCase().includes(state.posterQuery.toLowerCase()));let nums=['all',1,2,3,4,5,6];return `<div class="headrow"><h1>Poster shortlist</h1><span class="pill green">${guide.posters.filter(p=>isChecked(p.id)).length} visited</span></div><p class="explain">Five selected papers per session. Session 4 targets are for a coauthor because you're presenting autoSAFE.</p><input class="search" id="posterSearch" placeholder="Search papers and topics…" value="${escapeHTML(state.posterQuery)}" aria-label="Search posters"><div class="chips" style="margin-top:12px">${nums.map(n=>`<button class="chip ${state.session===String(n)?'active':''}" data-session="${n}">${n==='all'?'All sessions':'Session '+n}</button>`).join('')}</div><div class="two-column">${ps.map(itemCard).join('')||'<div class="empty">No papers found.</div>'}</div><div class="panel"><h3>How to approach authors</h3><p class="explain">Ask about failure modes, out-of-distribution behavior, whether their evaluation detects unsafe deployment conditions, and whether a runtime certificate could complement their method.</p></div>`}
 function renderExpo(){const choices=['all','confirmed','unverified'];const bs=guide.booths.filter(b=>state.expoFilter==='all'||(state.expoFilter==='confirmed'?b.confirmed:!b.confirmed));return `<div class="headrow"><h1>Expo route</h1><span class="pill green">Halls 5–7</span></div><div class="panel"><div class="kicker">ICC Sydney · Exhibition Centre, Level 4</div><div class="explain" style="margin-top:8px">Mon 7: 11:00–19:00 · Tue/Wed: 09:00–17:00 · Thu 10: 09:00–13:00. Booth numbers are shown only when verified.</div></div><div class="chips">${choices.map(c=>`<button class="chip ${state.expoFilter===c?'active':''}" data-expofilter="${c}">${c==='all'?'All targets':c==='confirmed'?'Verified booths':'To locate'}</button>`).join('')}</div><div class="two-column">${bs.map((b,i)=>`<article class="list-card ${isChecked(b.id)?'done':''}"><div class="item"><div class="rank">${b.priority}</div><div class="item-content"><div class="label-row"><span class="pill ${b.confirmed?'green':'gold'}">${b.confirmed?'Booth '+escapeHTML(b.booth):'Booth unverified'}</span></div><h3>${escapeHTML(b.name)}</h3><p>${escapeHTML(b.pitch)}</p><div class="context-actions">${link(b.url,'Website')}<button class="btn secondary sm" data-open="booth:${escapeHTML(b.id)}">Contacts / notes</button></div></div><button class="check ${isChecked(b.id)?'checked':''}" data-check="${escapeHTML(b.id)}" aria-label="Mark booth visited">✓</button></div></article>`).join('')}</div><div class="warning">Booth presence and placement can change. Verify NVIDIA, Anthropic and Apple against the live exhibitor directory before searching for their booths.</div>`}
