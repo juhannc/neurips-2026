@@ -77,3 +77,15 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
 
 /* Dark NeurIPS dotted mark for the app header. */
 .topbar .brand img.brand-logo.official-header-logo{background:#101b2a;border:1px solid #29374a;padding:3px;border-radius:11px}
+
+/* iOS standalone: opaque header below the (non-translucent) system status bar.
+   The status bar's own area is handled by WebKit; keep our brand clear of it. */
+@media (display-mode:standalone) {
+  .topbar {
+    background:#0b1522;
+    padding-top:max(12px,env(safe-area-inset-top,0px));
+    height:calc(82px + env(safe-area-inset-top,0px));
+    position:relative;
+    z-index:2;
+  }
+}
