@@ -11,15 +11,15 @@ import cairosvg
 from PIL import Image
 
 assets = Path("assets")
-source = assets / "neurips-dots.svg"
+source = assets / "neurips-dots-dark.svg"
 if not source.is_file():
     raise SystemExit("Missing original NeurIPS dotted logo SVG")
 for size in (180, 192, 512):
-    # Keep a comfortable optical margin and a white iOS Home Screen background.
+    # Keep a comfortable optical margin and a dark navy iOS Home Screen background.
     symbol_size = round(size * 0.82)
     png = cairosvg.svg2png(url=str(source), output_width=symbol_size, output_height=symbol_size)
-    icon = Image.new("RGBA", (size, size), "#ffffff")
+    icon = Image.new("RGBA", (size, size), "#101b2a")
     symbol = Image.open(BytesIO(png)).convert("RGBA")
     icon.alpha_composite(symbol, ((size - symbol_size) // 2, (size - symbol_size) // 2))
     icon.convert("RGB").save(assets / f"icon-{size}.png", optimize=True)
-print("Created NeurIPS dotted-symbol PWA icons: 180, 192, 512")
+print("Created dark NeurIPS dotted-symbol PWA icons: 180, 192, 512")
