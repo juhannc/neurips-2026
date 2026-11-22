@@ -1,0 +1,1019 @@
+{
+  "events": [
+    {
+      "id": "e001",
+      "day": "2026-12-06",
+      "start": "11:00",
+      "end": "19:00",
+      "title": "NeurIPS Expo Day — talks",
+      "category": "Expo",
+      "location": "International Convention Centre Sydney, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 3,
+      "notes": "Parallel expo talks across several rooms. Individual talks have different rooms.",
+      "url": "https://neurips.cc/Expo/Conferences/2026/Schedule_overview?presentation_type=All",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e002",
+      "day": "2026-12-06",
+      "start": "13:00",
+      "end": "14:00",
+      "title": "Two Sigma — One Market, Many Clocks",
+      "category": "Networking",
+      "location": "ICC Sydney, Parkside 2, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Quantitative finance and multimodal learning.",
+      "url": "https://qrsntu.org/service/neurips26/event/180212/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e003",
+      "day": "2026-12-06",
+      "start": "18:00",
+      "end": "19:00",
+      "title": "Jump Trading — Adapting AI Research to Quantitative Finance",
+      "category": "Networking",
+      "location": "ICC Sydney, Grand Ballroom B1, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Quant research networking, conference expo talk.",
+      "url": "https://qrsntu.org/service/neurips26/event/180197/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e004",
+      "day": "2026-12-07",
+      "start": "11:00",
+      "end": "19:00",
+      "title": "Exhibitor hall open",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 2,
+      "notes": "Published exhibitor hours; see venue notice onsite.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e005",
+      "day": "2026-12-07",
+      "start": "12:00",
+      "end": "13:00",
+      "title": "Expo booth route — IBM, NVIDIA, Sony, Biohub",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 3,
+      "notes": "Suggested exploration time. Verify booth numbers on floor plan.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "suggested",
+      "kind": "conference"
+    },
+    {
+      "id": "e006",
+      "day": "2026-12-07",
+      "start": "14:00",
+      "end": "17:00",
+      "title": "Formal Guarantees for Frontier AI Systems",
+      "category": "Research",
+      "location": "ICC Sydney, Pyrmont Theatre, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Safety-critical systems, formal guarantees, model reliability.",
+      "url": "https://qrsntu.org/service/neurips26/event/137740/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e007",
+      "day": "2026-12-07",
+      "start": "17:30",
+      "end": "19:00",
+      "title": "NeurIPS welcome reception",
+      "category": "Networking",
+      "location": "ICC Sydney, Exhibition Centre Hall 5, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Conference badge required; check current reception room/time onsite.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "verify",
+      "kind": "conference"
+    },
+    {
+      "id": "e008",
+      "day": "2026-12-08",
+      "start": "10:00",
+      "end": "13:00",
+      "title": "Sydney Poster Session 1",
+      "category": "Posters",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "5 research shortlist posters in the Posters tab.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-08",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e009",
+      "day": "2026-12-08",
+      "start": "17:00",
+      "end": "20:00",
+      "title": "Sydney Poster Session 2",
+      "category": "Posters",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "5 research shortlist posters in the Posters tab. Session 2 and 6 overlap evening events.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-08",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e010",
+      "day": "2026-12-09",
+      "start": "10:00",
+      "end": "13:00",
+      "title": "Sydney Poster Session 3",
+      "category": "Posters",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "5 research shortlist posters in the Posters tab.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-09",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e011",
+      "day": "2026-12-09",
+      "start": "17:00",
+      "end": "20:00",
+      "title": "Sydney Poster Session 4 — PRESENT autoSAFE",
+      "category": "Presentation",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Own paper: https://neurips.cc/virtual/2026/poster/151160 . Remain at poster throughout.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-09",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e012",
+      "day": "2026-12-10",
+      "start": "10:00",
+      "end": "13:00",
+      "title": "Sydney Poster Session 5",
+      "category": "Posters",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "5 research shortlist posters in the Posters tab.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-10",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e013",
+      "day": "2026-12-10",
+      "start": "17:00",
+      "end": "20:00",
+      "title": "Sydney Poster Session 6",
+      "category": "Posters",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "5 research shortlist posters in the Posters tab. Session 2 and 6 overlap evening events.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-10",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e014",
+      "day": "2026-12-08",
+      "start": "13:00",
+      "end": "14:00",
+      "title": "Expo booth networking — targeted visits",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 3,
+      "notes": "Visit confirmed exhibitors, then check NVIDIA/Anthropic/Apple/Optiver presence.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "suggested",
+      "kind": "conference"
+    },
+    {
+      "id": "e015",
+      "day": "2026-12-09",
+      "start": "13:00",
+      "end": "14:00",
+      "title": "Expo booth networking — targeted visits",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 3,
+      "notes": "Visit confirmed exhibitors, then check NVIDIA/Anthropic/Apple/Optiver presence.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "suggested",
+      "kind": "conference"
+    },
+    {
+      "id": "e016",
+      "day": "2026-12-08",
+      "start": "09:00",
+      "end": "17:00",
+      "title": "Exhibitor hall open",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 2,
+      "notes": "Open hours; not a mandatory commitment.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e017",
+      "day": "2026-12-08",
+      "start": "18:00",
+      "end": "22:00",
+      "title": "Optiver × NVIDIA × Anthropic — The Research Exchange",
+      "category": "Networking",
+      "location": "",
+      "priority": 5,
+      "notes": "Your scheduled private event. Venue not independently verified: use your invitation. Conflicts with poster session 2 and Intel Rooftop.",
+      "url": "",
+      "status": "user-confirmed-time",
+      "kind": "conference"
+    },
+    {
+      "id": "e018",
+      "day": "2026-12-08",
+      "start": "18:00",
+      "end": "21:00",
+      "title": "Intel AI Rooftop",
+      "category": "Networking",
+      "location": "",
+      "priority": 2,
+      "notes": "Your scheduled event; address not verified. Conflicts with Research Exchange.",
+      "url": "",
+      "status": "user-confirmed-time",
+      "kind": "conference"
+    },
+    {
+      "id": "e019",
+      "day": "2026-12-08",
+      "start": "18:00",
+      "end": "22:00",
+      "title": "Together AI × NVIDIA — Breakthrough Island (optional)",
+      "category": "Networking",
+      "location": "",
+      "priority": 4,
+      "notes": "Approval required; precise boarding point issued to accepted guests. Alternative to Research Exchange.",
+      "url": "https://luma.com/breakthroughisland-neurips",
+      "status": "optional",
+      "kind": "conference"
+    },
+    {
+      "id": "e020",
+      "day": "2026-12-09",
+      "start": "09:00",
+      "end": "17:00",
+      "title": "Exhibitor hall open",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 2,
+      "notes": "Not a mandatory commitment.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e021",
+      "day": "2026-12-09",
+      "start": "16:30",
+      "end": "17:00",
+      "title": "Setup and prepare autoSAFE poster",
+      "category": "Presentation",
+      "location": "ICC Sydney, Exhibition Centre Level 1, Halls 1–4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Bring poster, QR code, contact information, and 30-second elevator pitch.",
+      "url": "https://neurips.cc/virtual/2026/poster/151160",
+      "status": "suggested",
+      "kind": "conference"
+    },
+    {
+      "id": "e022",
+      "day": "2026-12-09",
+      "start": "",
+      "end": "",
+      "title": "Optiver — Intelligence at Play (time to confirm)",
+      "category": "Networking",
+      "location": "",
+      "priority": 3,
+      "notes": "Known invitation, exact start/end time and venue not verified; update after checking invitation. Do not overlap own poster.",
+      "url": "",
+      "status": "time-unknown",
+      "kind": "conference"
+    },
+    {
+      "id": "e023",
+      "day": "2026-12-09",
+      "start": "20:00",
+      "end": "22:00",
+      "title": "Airtree — Off the Record (optional)",
+      "category": "Networking",
+      "location": "Barangaroo House, 35 Barangaroo Avenue, Barangaroo NSW 2000, Australia",
+      "priority": 3,
+      "notes": "Event begins earlier; arrival after own poster, if registration accepted.",
+      "url": "https://luma.com/a9fnug18",
+      "status": "optional",
+      "kind": "conference"
+    },
+    {
+      "id": "e024",
+      "day": "2026-12-10",
+      "start": "09:00",
+      "end": "13:00",
+      "title": "Exhibitor hall open — LAST DAY",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Important: last chance for booths; previous suggested afternoon Thursday expo visits were after closing.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e025",
+      "day": "2026-12-10",
+      "start": "15:30",
+      "end": "17:00",
+      "title": "Uncertainty Quantification & Calibration orals",
+      "category": "Research",
+      "location": "ICC Sydney, Parkside 1, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Very relevant to autoSAFE uncertainty and calibrated decisions.",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-10",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e026",
+      "day": "2026-12-10",
+      "start": "18:00",
+      "end": "22:00",
+      "title": "NVIDIA Researcher Celebration",
+      "category": "Networking",
+      "location": "Hay St Market, 9–13 Hay Street, Haymarket NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Your confirmed event time. Request/registration may require host approval. Overlaps Poster Session 6 and GSA dinner.",
+      "url": "https://www.nvidia.com/en-us/events/neurips/",
+      "status": "user-confirmed-time",
+      "kind": "conference"
+    },
+    {
+      "id": "e027",
+      "day": "2026-12-10",
+      "start": "19:00",
+      "end": "22:00",
+      "title": "GSA Capital — Late Fusion Dinner (optional)",
+      "category": "Networking",
+      "location": "One Dining, Chinese Garden of Friendship, Haymarket NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Requires approval; conflicts with NVIDIA celebration.",
+      "url": "https://luma.com/qekw5st2",
+      "status": "optional",
+      "kind": "conference"
+    },
+    {
+      "id": "e028",
+      "day": "2026-12-11",
+      "start": "09:00",
+      "end": "17:30",
+      "title": "8th Robot Learning Workshop — WRL",
+      "category": "Workshop",
+      "location": "ICC Sydney, Grand Ballroom B2 & B3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Friday confirmed by workshop site and user. Speaker-by-slot list currently TBD.",
+      "url": "https://www.robot-learning.ml/2026/schedule/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e029",
+      "day": "2026-12-11",
+      "start": "12:50",
+      "end": "14:20",
+      "title": "WRL poster session — YOUR workshop paper",
+      "category": "Presentation",
+      "location": "ICC Sydney, Grand Ballroom B2 & B3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Poster session published; verify that your paper is assigned here before treating it as mandatory.",
+      "url": "https://www.robot-learning.ml/2026/schedule/",
+      "status": "assignment-unverified",
+      "kind": "conference"
+    },
+    {
+      "id": "e030",
+      "day": "2026-12-11",
+      "start": "16:20",
+      "end": "17:05",
+      "title": "WRL zero-shot Physical AI panel",
+      "category": "Research",
+      "location": "ICC Sydney, Grand Ballroom B2 & B3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Panel: Is zero-shot Physical AI realistic in near term?",
+      "url": "https://www.robot-learning.ml/2026/schedule/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e031",
+      "day": "2026-12-11",
+      "start": "17:30",
+      "end": "19:30",
+      "title": "Official workshop reception",
+      "category": "Networking",
+      "location": "ICC Sydney, Exhibition Centre Hall 2, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Badge/access dependent; reconfirm timing onsite.",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference",
+      "status": "verify",
+      "kind": "conference"
+    },
+    {
+      "id": "e032",
+      "day": "2026-12-12",
+      "start": "08:00",
+      "end": "17:00",
+      "title": "TAE — Can We Trust AI Evaluation?",
+      "category": "Workshop",
+      "location": "ICC Sydney, Meeting Rooms C2.2 & C2.3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Own accepted TAE workshop paper.",
+      "url": "https://tai-eval.github.io/schedule/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e033",
+      "day": "2026-12-12",
+      "start": "08:15",
+      "end": "09:45",
+      "title": "TAE invited talks 1–2",
+      "category": "Research",
+      "location": "ICC Sydney, Meeting Rooms C2.2 & C2.3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Presenters not necessarily named yet.",
+      "url": "https://tai-eval.github.io/schedule/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e034",
+      "day": "2026-12-12",
+      "start": "11:00",
+      "end": "12:00",
+      "title": "TAE Poster Session 1 — possible assignment",
+      "category": "Presentation",
+      "location": "ICC Sydney, Meeting Rooms C2.2 & C2.3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Your assigned session is not published; do not assume you present in this block.",
+      "url": "https://tai-eval.github.io/schedule/",
+      "status": "assignment-unverified",
+      "kind": "conference"
+    },
+    {
+      "id": "e035",
+      "day": "2026-12-12",
+      "start": "12:45",
+      "end": "14:15",
+      "title": "TAE invited talks 3–4",
+      "category": "Research",
+      "location": "ICC Sydney, Meeting Rooms C2.2 & C2.3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "High-value evaluation/robustness talks.",
+      "url": "https://tai-eval.github.io/schedule/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e036",
+      "day": "2026-12-12",
+      "start": "14:15",
+      "end": "15:00",
+      "title": "TAE Poster Session 2 — possible assignment",
+      "category": "Presentation",
+      "location": "ICC Sydney, Meeting Rooms C2.2 & C2.3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Your assigned session is not published; do not assume you present in this block.",
+      "url": "https://tai-eval.github.io/schedule/",
+      "status": "assignment-unverified",
+      "kind": "conference"
+    },
+    {
+      "id": "e037",
+      "day": "2026-12-12",
+      "start": "16:00",
+      "end": "16:45",
+      "title": "TAE evaluation panel",
+      "category": "Research",
+      "location": "ICC Sydney, Meeting Rooms C2.2 & C2.3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Discussion of evaluation, robustness, and risk.",
+      "url": "https://tai-eval.github.io/schedule/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e038",
+      "day": "2026-12-06",
+      "start": "12:00",
+      "end": "13:00",
+      "title": "MATS Research — Scaling AI Safety & Security",
+      "category": "Research",
+      "location": "ICC Sydney, Grand Ballroom B2 & B3, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Strong match for frontier-model safety research.",
+      "url": "https://qrsntu.org/service/neurips26/event/180201/",
+      "status": "published",
+      "kind": "conference"
+    },
+    {
+      "id": "e039",
+      "day": "2026-12-06",
+      "start": "13:00",
+      "end": "14:00",
+      "title": "Apple — Advancing the Frontiers of On-Device AI",
+      "category": "Research",
+      "location": "ICC Sydney, Pyrmont Theatre, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Oncel Tuzel. Conflicts with Two Sigma and Citadel; choose one.",
+      "url": "https://qrsntu.org/service/neurips26/event/180208/",
+      "status": "optional",
+      "kind": "conference"
+    },
+    {
+      "id": "e040",
+      "day": "2026-12-06",
+      "start": "13:00",
+      "end": "14:00",
+      "title": "Citadel & Citadel Securities — AI for Financial Markets",
+      "category": "Networking",
+      "location": "ICC Sydney, Darling Harbour Theatre, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "High-value quant option. Conflicts with Apple and Two Sigma; choose one.",
+      "url": "https://qrsntu.org/service/neurips26/event/180203/",
+      "status": "optional",
+      "kind": "conference"
+    }
+  ],
+  "posters": [
+    {
+      "id": "p01",
+      "session": 1,
+      "title": "Causality can systematically address the monsters under the bench(marks)",
+      "url": "https://neurips.cc/virtual/2026/poster/140063",
+      "reason": "Evaluation validity; safety claims.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p02",
+      "session": 1,
+      "title": "Colosseum: Auditing Collusion in Cooperative Multi-Agent Systems",
+      "url": "https://neurips.cc/virtual/2026/poster/138980",
+      "reason": "Safety auditing.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p03",
+      "session": 1,
+      "title": "Neural Bayesian Filtering",
+      "url": "https://neurips.cc/virtual/2026/poster/154508",
+      "reason": "Uncertainty and state estimation; Sony.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p04",
+      "session": 1,
+      "title": "Strong Post-Training from Permissive, Reasoning-Dominant, Web-Scale Pretraining",
+      "url": "https://neurips.cc/virtual/2026/poster/153271",
+      "reason": "Frontier model post-training.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p05",
+      "session": 1,
+      "title": "Transferability for General Reasoning: An Automated Curriculum for Multi-Domain LLM RL",
+      "url": "https://neurips.cc/virtual/2026/poster/153605",
+      "reason": "Generalization and RL.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p06",
+      "session": 2,
+      "title": "FutureSim: Replaying World Events to Evaluate Adaptive Agents",
+      "url": "https://neurips.cc/virtual/2026/poster/139347",
+      "reason": "Changing conditions / ODD.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p07",
+      "session": 2,
+      "title": "Learning POMDP World Models from Observations with Language-Model Priors",
+      "url": "https://neurips.cc/virtual/2026/poster/155829",
+      "reason": "Partial observability.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p08",
+      "session": 2,
+      "title": "ROTATE: Regret-driven Open-ended Training for Ad Hoc Teamwork",
+      "url": "https://neurips.cc/virtual/2026/poster/150582",
+      "reason": "Multi-agent RL; Sony.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p09",
+      "session": 2,
+      "title": "Stabilizing Extrapolation in Looped Transformers via Learned Stochastic Stopping",
+      "url": "https://neurips.cc/virtual/2026/poster/152714",
+      "reason": "Extrapolation robustness.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p10",
+      "session": 2,
+      "title": "Improved State Mixing in Higher-order and Block Diagonal Linear Recurrent Networks",
+      "url": "https://neurips.cc/virtual/2026/poster/152218",
+      "reason": "Representation architectures.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p11",
+      "session": 3,
+      "title": "Instrumental Choices: Measuring the Propensity of LLM Agents to Pursue Instrumental Behaviors",
+      "url": "https://neurips.cc/virtual/2026/poster/139624",
+      "reason": "Agent safety evaluation.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p12",
+      "session": 3,
+      "title": "No More, No Less: Task Alignment in Terminal Agents",
+      "url": "https://neurips.cc/virtual/2026/poster/139104",
+      "reason": "Agent task alignment.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p13",
+      "session": 3,
+      "title": "Fixed-Point Reasoning: Stable and Adaptive Deep Looped Models",
+      "url": "https://neurips.cc/virtual/2026/poster/148540",
+      "reason": "Stable decisions.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p14",
+      "session": 3,
+      "title": "The Alien Space of Science: Sampling Coherent but Cognitively Unavailable Research Directions",
+      "url": "https://neurips.cc/virtual/2026/poster/152222",
+      "reason": "Open-ended discovery.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p15",
+      "session": 3,
+      "title": "Structuring Open-Ended NAS: Semi-Automated Design Knowledge Structuring with LLMs for Efficient Neural Architecture Search",
+      "url": "https://neurips.cc/virtual/2026/poster/151464",
+      "reason": "Industry; Sony; search and architecture.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p16",
+      "session": 4,
+      "title": "YOUR OWN autoSAFE POSTER",
+      "url": "https://neurips.cc/virtual/2026/poster/151160",
+      "reason": "PROTECTED: present; do not leave.",
+      "delegated": true,
+      "visited": false
+    },
+    {
+      "id": "p17",
+      "session": 4,
+      "title": "Beyond IID: How General Are Tabular Foundation Models, Really?",
+      "url": "https://neurips.cc/virtual/2026/poster/139490",
+      "reason": "Generalization; delegate only.",
+      "delegated": true,
+      "visited": false
+    },
+    {
+      "id": "p18",
+      "session": 4,
+      "title": "DiffRatio: Training One-Step Diffusion Models Without Teacher Supervision",
+      "url": "https://ellis.institute/en/news/ellis-institute-tubingen-at-neurips-2026",
+      "reason": "Low alignment; delegate only.",
+      "delegated": true,
+      "visited": false
+    },
+    {
+      "id": "p19",
+      "session": 4,
+      "title": "BayesJudge: Uncertainty-Aware Bayesian Meta-Evaluation of Human and LLM Judgments",
+      "url": "https://ellis.institute/en/news/ellis-institute-tubingen-at-neurips-2026",
+      "reason": "Uncertainty evaluation; session placement needs reconfirmation.",
+      "delegated": true,
+      "visited": false
+    },
+    {
+      "id": "p20",
+      "session": 4,
+      "title": "Fast Sandwich Products in Clifford Algebra",
+      "url": "https://ellis.institute/en/news/ellis-institute-tubingen-at-neurips-2026",
+      "reason": "NVIDIA-indexed affiliation, presenter unverified; session placement needs reconfirmation.",
+      "delegated": true,
+      "visited": false
+    },
+    {
+      "id": "p21",
+      "session": 5,
+      "title": "Omni-Interactive Universal Embedder",
+      "url": "https://neurips.cc/virtual/2026/poster/155508",
+      "reason": "DART embeddings; Sony.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p22",
+      "session": 5,
+      "title": "Intrinsically Interpretable Attention via Sparse Post-Training",
+      "url": "https://neurips.cc/virtual/2026/poster/152659",
+      "reason": "Interpretability.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p23",
+      "session": 5,
+      "title": "Making LoRA Identifiable: Orthogonal Alignment for Continual Learning",
+      "url": "https://neurips.cc/virtual/2026/poster/155348",
+      "reason": "Representation stability; Sony.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p24",
+      "session": 5,
+      "title": "Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models",
+      "url": "https://neurips.cc/virtual/2026/poster/149804",
+      "reason": "Decision reliability.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p25",
+      "session": 5,
+      "title": "DDMS: Discriminative Distillation of Multi-view Foundational Features into Single-view Models",
+      "url": "https://neurips.cc/virtual/2026/poster/148341",
+      "reason": "Representation transfer; Sony.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p26",
+      "session": 6,
+      "title": "Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs",
+      "url": "https://neurips.cc/virtual/2026/poster/154015",
+      "reason": "Robustness evaluation.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p27",
+      "session": 6,
+      "title": "Skill-Inject: Measuring Agent Vulnerability to Skill File Attacks",
+      "url": "https://neurips.cc/virtual/2026/poster/139261",
+      "reason": "Agent safety.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p28",
+      "session": 6,
+      "title": "SuperSycophantic: Stress-Testing Frontier LLMs from Single- to Multi-Turn Sycophancy",
+      "url": "https://neurips.cc/virtual/2026/poster/148794",
+      "reason": "Robustness, frontier LLMs.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p29",
+      "session": 6,
+      "title": "STRABLE: Benchmarking Tabular Machine Learning with Strings",
+      "url": "https://neurips.cc/virtual/2026/poster/139430",
+      "reason": "OOD/generalization.",
+      "delegated": false,
+      "visited": false
+    },
+    {
+      "id": "p30",
+      "session": 6,
+      "title": "Continuous Open-ended Discovery and Evolution of Skills as Hierarchical Reward Programs",
+      "url": "https://neurips.cc/virtual/2026/poster/149488",
+      "reason": "Robotics RL; Sony.",
+      "delegated": false,
+      "visited": false
+    }
+  ],
+  "booths": [
+    {
+      "id": "b1",
+      "name": "NVIDIA",
+      "booth": "Not verified",
+      "priority": 5,
+      "pitch": "Safety-critical autonomy, robotics, model runtime monitoring; ask about DGX Spark demos or promotions.",
+      "url": "https://www.nvidia.com/en-us/events/neurips/",
+      "confirmed": false
+    },
+    {
+      "id": "b2",
+      "name": "Anthropic",
+      "booth": "Not verified",
+      "priority": 5,
+      "pitch": "Robust evaluations, distributional shift, runtime assurance, frontier-model safety.",
+      "url": "https://www.anthropic.com/",
+      "confirmed": false
+    },
+    {
+      "id": "b3",
+      "name": "Optiver",
+      "booth": "Not verified",
+      "priority": 5,
+      "pitch": "Quant research, uncertainty and out-of-distribution detection; meet researchers at Research Exchange.",
+      "url": "https://optiver.com/",
+      "confirmed": false
+    },
+    {
+      "id": "b4",
+      "name": "Apple",
+      "booth": "Not verified",
+      "priority": 4,
+      "pitch": "On-device ML, reliable representation learning and model monitoring.",
+      "url": "https://machinelearning.apple.com/",
+      "confirmed": false
+    },
+    {
+      "id": "b5",
+      "name": "Sony",
+      "booth": "Stand number unpublished",
+      "priority": 4,
+      "pitch": "Talk to representation learning and robotics authors; Sony publicly says they have a booth.",
+      "url": "https://www.sony.com/en/SonyInfo/technology/Conference/NeurIPS2026/",
+      "confirmed": true
+    },
+    {
+      "id": "b6",
+      "name": "IBM Research",
+      "booth": "73",
+      "priority": 4,
+      "pitch": "Researchers at booth; trustworthy AI, formal methods and AI deployment.",
+      "url": "https://research.ibm.com/events/neurips-2026",
+      "confirmed": true
+    },
+    {
+      "id": "b7",
+      "name": "Turing",
+      "booth": "88",
+      "priority": 4,
+      "pitch": "Frontier AI evaluations and post-training, meet technical staff.",
+      "url": "https://go.turing.com/turing-at-neurips-2026",
+      "confirmed": true
+    },
+    {
+      "id": "b8",
+      "name": "Biohub",
+      "booth": "72",
+      "priority": 3,
+      "pitch": "Biomedical research and robust machine learning; cross-domain ODD discussions.",
+      "url": "https://biohub.org/events/neurips-2026/",
+      "confirmed": true
+    },
+    {
+      "id": "b9",
+      "name": "Prolific",
+      "booth": "118",
+      "priority": 3,
+      "pitch": "Human evaluation datasets and reliable evaluation.",
+      "url": "https://luma.com/prolific-at-neurips2026",
+      "confirmed": true
+    }
+  ],
+  "todos": [
+    {
+      "id": "t1",
+      "title": "Confirm Research Exchange address and bring invitation",
+      "priority": 5,
+      "due": "2026-12-06"
+    },
+    {
+      "id": "t2",
+      "title": "Confirm Intel Rooftop address",
+      "priority": 2,
+      "due": "2026-12-06"
+    },
+    {
+      "id": "t3",
+      "title": "Confirm Intelligence at Play start, end and venue",
+      "priority": 4,
+      "due": "2026-12-07"
+    },
+    {
+      "id": "t4",
+      "title": "Verify whether NVIDIA celebration RSVP is accepted",
+      "priority": 5,
+      "due": "2026-12-06"
+    },
+    {
+      "id": "t5",
+      "title": "Confirm WRL poster assignment and exact presentation requirements",
+      "priority": 5,
+      "due": "2026-12-03"
+    },
+    {
+      "id": "t6",
+      "title": "Confirm TAE poster session 1 vs 2",
+      "priority": 5,
+      "due": "2026-12-03"
+    },
+    {
+      "id": "t7",
+      "title": "Check NVIDIA / Anthropic / Apple booth presence and numbers",
+      "priority": 4,
+      "due": "2026-12-07"
+    },
+    {
+      "id": "t8",
+      "title": "Prepare poster QR code, autoSAFE summary and DART follow-up pitch",
+      "priority": 5,
+      "due": "2026-12-07"
+    },
+    {
+      "id": "t9",
+      "title": "Visit IBM #73 and Turing #88",
+      "priority": 4,
+      "due": "2026-12-10"
+    },
+    {
+      "id": "t10",
+      "title": "Ask NVIDIA whether DGX Spark giveaway/raffle is actually offered",
+      "priority": 2,
+      "due": "2026-12-08"
+    },
+    {
+      "id": "t11",
+      "title": "Follow up with contacts and exchange paper links",
+      "priority": 4,
+      "due": "2026-12-12"
+    },
+    {
+      "id": "t12",
+      "title": "Check exhibitor floor plan on arrival",
+      "priority": 4,
+      "due": "2026-12-07"
+    }
+  ],
+  "sources": [
+    {
+      "name": "ICC Sydney attendee guide",
+      "url": "https://neurips.cc/Conferences/2026/Sydney-AtTheConference"
+    },
+    {
+      "name": "Sydney week schedule",
+      "url": "https://qrsntu.org/service/neurips26/schedule/?city=sydney"
+    },
+    {
+      "name": "WRL workshop schedule",
+      "url": "https://www.robot-learning.ml/2026/schedule/"
+    },
+    {
+      "name": "TAE workshop schedule",
+      "url": "https://tai-eval.github.io/schedule/"
+    },
+    {
+      "name": "NVIDIA NeurIPS events",
+      "url": "https://www.nvidia.com/en-us/events/neurips/"
+    },
+    {
+      "name": "Expo talks",
+      "url": "https://neurips.cc/Expo/Conferences/2026/Schedule_overview?presentation_type=All"
+    }
+  ]
+}

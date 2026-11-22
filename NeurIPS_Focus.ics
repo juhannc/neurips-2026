@@ -1,0 +1,346 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//NeurIPS Sydney 2026 Personal Guide//EN
+X-WR-CALNAME:NeurIPS Sydney · Focus calendar
+X-WR-TIMEZONE:Australia/Sydney
+BEGIN:VTIMEZONE
+TZID:Australia/Sydney
+X-LIC-LOCATION:Australia/Sydney
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+1000
+TZOFFSETTO:+1100
+TZNAME:AEDT
+DTSTART:19701004T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+1100
+TZOFFSETTO:+1000
+TZNAME:AEST
+DTSTART:19700405T030000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:e002.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Two Sigma — One Market\, Many Clocks
+DTSTART;TZID=Australia/Sydney:20261206T130000
+DTEND;TZID=Australia/Sydney:20261206T140000
+DESCRIPTION:Quantitative finance and multimodal learning.\nhttps://qrsnt
+ u.org/service/neurips26/event/180212/
+LOCATION:ICC Sydney\, Parkside 2\, 14 Darling Drive\, Sydney NSW 2000\, 
+ Australia
+URL:https://qrsntu.org/service/neurips26/event/180212/
+END:VEVENT
+BEGIN:VEVENT
+UID:e003.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Jump Trading — Adapting AI Research to Quantitative Finance
+DTSTART;TZID=Australia/Sydney:20261206T180000
+DTEND;TZID=Australia/Sydney:20261206T190000
+DESCRIPTION:Quant research networking\, conference expo talk.\nhttps://q
+ rsntu.org/service/neurips26/event/180197/
+LOCATION:ICC Sydney\, Grand Ballroom B1\, 14 Darling Drive\, Sydney NSW 
+ 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/event/180197/
+END:VEVENT
+BEGIN:VEVENT
+UID:e006.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Formal Guarantees for Frontier AI Systems
+DTSTART;TZID=Australia/Sydney:20261207T140000
+DTEND;TZID=Australia/Sydney:20261207T170000
+DESCRIPTION:Safety-critical systems\, formal guarantees\, model reliabil
+ ity.\nhttps://qrsntu.org/service/neurips26/event/137740/
+LOCATION:ICC Sydney\, Pyrmont Theatre\, 14 Darling Drive\, Sydney NSW 20
+ 00\, Australia
+URL:https://qrsntu.org/service/neurips26/event/137740/
+END:VEVENT
+BEGIN:VEVENT
+UID:e008.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Sydney Poster Session 1
+DTSTART;TZID=Australia/Sydney:20261208T100000
+DTEND;TZID=Australia/Sydney:20261208T130000
+DESCRIPTION:5 research shortlist posters in the Posters tab.\nhttps://qr
+ sntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-08
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-08
+END:VEVENT
+BEGIN:VEVENT
+UID:e009.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Sydney Poster Session 2
+DTSTART;TZID=Australia/Sydney:20261208T170000
+DTEND;TZID=Australia/Sydney:20261208T200000
+DESCRIPTION:5 research shortlist posters in the Posters tab. Session 2 a
+ nd 6 overlap evening events.\nhttps://qrsntu.org/service/neurips26/sche
+ dule/?city=sydney&day=2026-12-08
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-08
+END:VEVENT
+BEGIN:VEVENT
+UID:e010.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Sydney Poster Session 3
+DTSTART;TZID=Australia/Sydney:20261209T100000
+DTEND;TZID=Australia/Sydney:20261209T130000
+DESCRIPTION:5 research shortlist posters in the Posters tab.\nhttps://qr
+ sntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-09
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-09
+END:VEVENT
+BEGIN:VEVENT
+UID:e011.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Sydney Poster Session 4 — PRESENT autoSAFE
+DTSTART;TZID=Australia/Sydney:20261209T170000
+DTEND;TZID=Australia/Sydney:20261209T200000
+DESCRIPTION:Own paper: https://neurips.cc/virtual/2026/poster/151160 . R
+ emain at poster throughout.\nhttps://qrsntu.org/service/neurips26/sched
+ ule/?city=sydney&day=2026-12-09
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-09
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS session soon
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e012.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Sydney Poster Session 5
+DTSTART;TZID=Australia/Sydney:20261210T100000
+DTEND;TZID=Australia/Sydney:20261210T130000
+DESCRIPTION:5 research shortlist posters in the Posters tab.\nhttps://qr
+ sntu.org/service/neurips26/schedule/?city=sydney&day=2026-12-10
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-10
+END:VEVENT
+BEGIN:VEVENT
+UID:e013.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Sydney Poster Session 6
+DTSTART;TZID=Australia/Sydney:20261210T170000
+DTEND;TZID=Australia/Sydney:20261210T200000
+DESCRIPTION:5 research shortlist posters in the Posters tab. Session 2 a
+ nd 6 overlap evening events.\nhttps://qrsntu.org/service/neurips26/sche
+ dule/?city=sydney&day=2026-12-10
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-10
+END:VEVENT
+BEGIN:VEVENT
+UID:e017.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optiver × NVIDIA × Anthropic — The Research Exchange
+DTSTART;TZID=Australia/Sydney:20261208T180000
+DTEND;TZID=Australia/Sydney:20261208T220000
+DESCRIPTION:Your scheduled private event. Venue not independently verifi
+ ed: use your invitation. Conflicts with poster session 2 and Intel Roof
+ top.
+END:VEVENT
+BEGIN:VEVENT
+UID:e018.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Intel AI Rooftop
+DTSTART;TZID=Australia/Sydney:20261208T180000
+DTEND;TZID=Australia/Sydney:20261208T210000
+DESCRIPTION:Your scheduled event\; address not verified. Conflicts with 
+ Research Exchange.
+END:VEVENT
+BEGIN:VEVENT
+UID:e025.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Uncertainty Quantification & Calibration orals
+DTSTART;TZID=Australia/Sydney:20261210T153000
+DTEND;TZID=Australia/Sydney:20261210T170000
+DESCRIPTION:Very relevant to autoSAFE uncertainty and calibrated decisio
+ ns.\nhttps://qrsntu.org/service/neurips26/schedule/?city=sydney&day=202
+ 6-12-10
+LOCATION:ICC Sydney\, Parkside 1\, 14 Darling Drive\, Sydney NSW 2000\, 
+ Australia
+URL:https://qrsntu.org/service/neurips26/schedule/?city=sydney&day=2026-
+ 12-10
+END:VEVENT
+BEGIN:VEVENT
+UID:e026.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:NVIDIA Researcher Celebration
+DTSTART;TZID=Australia/Sydney:20261210T180000
+DTEND;TZID=Australia/Sydney:20261210T220000
+DESCRIPTION:Your confirmed event time. Request/registration may require 
+ host approval. Overlaps Poster Session 6 and GSA dinner.\nhttps://www.n
+ vidia.com/en-us/events/neurips/
+LOCATION:Hay St Market\, 9–13 Hay Street\, Haymarket NSW 2000\, Austra
+ lia
+URL:https://www.nvidia.com/en-us/events/neurips/
+END:VEVENT
+BEGIN:VEVENT
+UID:e028.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:8th Robot Learning Workshop — WRL
+DTSTART;TZID=Australia/Sydney:20261211T090000
+DTEND;TZID=Australia/Sydney:20261211T173000
+DESCRIPTION:Friday confirmed by workshop site and user. Speaker-by-slot 
+ list currently TBD.\nhttps://www.robot-learning.ml/2026/schedule/
+LOCATION:ICC Sydney\, Grand Ballroom B2 & B3\, 14 Darling Drive\, Sydney
+  NSW 2000\, Australia
+URL:https://www.robot-learning.ml/2026/schedule/
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS session soon
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e029.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:WRL poster session — YOUR workshop paper
+DTSTART;TZID=Australia/Sydney:20261211T125000
+DTEND;TZID=Australia/Sydney:20261211T142000
+DESCRIPTION:Poster session published\; verify that your paper is assigne
+ d here before treating it as mandatory.\nStatus: assignment-unverified 
+ (planning / confirmation required).\nhttps://www.robot-learning.ml/2026
+ /schedule/
+LOCATION:ICC Sydney\, Grand Ballroom B2 & B3\, 14 Darling Drive\, Sydney
+  NSW 2000\, Australia
+URL:https://www.robot-learning.ml/2026/schedule/
+STATUS:TENTATIVE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS session soon
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e030.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:WRL zero-shot Physical AI panel
+DTSTART;TZID=Australia/Sydney:20261211T162000
+DTEND;TZID=Australia/Sydney:20261211T170500
+DESCRIPTION:Panel: Is zero-shot Physical AI realistic in near term?\nhtt
+ ps://www.robot-learning.ml/2026/schedule/
+LOCATION:ICC Sydney\, Grand Ballroom B2 & B3\, 14 Darling Drive\, Sydney
+  NSW 2000\, Australia
+URL:https://www.robot-learning.ml/2026/schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:e032.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:TAE — Can We Trust AI Evaluation?
+DTSTART;TZID=Australia/Sydney:20261212T080000
+DTEND;TZID=Australia/Sydney:20261212T170000
+DESCRIPTION:Own accepted TAE workshop paper.\nhttps://tai-eval.github.io
+ /schedule/
+LOCATION:ICC Sydney\, Meeting Rooms C2.2 & C2.3\, 14 Darling Drive\, Syd
+ ney NSW 2000\, Australia
+URL:https://tai-eval.github.io/schedule/
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS session soon
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e033.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:TAE invited talks 1–2
+DTSTART;TZID=Australia/Sydney:20261212T081500
+DTEND;TZID=Australia/Sydney:20261212T094500
+DESCRIPTION:Presenters not necessarily named yet.\nhttps://tai-eval.gith
+ ub.io/schedule/
+LOCATION:ICC Sydney\, Meeting Rooms C2.2 & C2.3\, 14 Darling Drive\, Syd
+ ney NSW 2000\, Australia
+URL:https://tai-eval.github.io/schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:e034.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:TAE Poster Session 1 — possible assignment
+DTSTART;TZID=Australia/Sydney:20261212T110000
+DTEND;TZID=Australia/Sydney:20261212T120000
+DESCRIPTION:Your assigned session is not published\; do not assume you p
+ resent in this block.\nStatus: assignment-unverified (planning / confir
+ mation required).\nhttps://tai-eval.github.io/schedule/
+LOCATION:ICC Sydney\, Meeting Rooms C2.2 & C2.3\, 14 Darling Drive\, Syd
+ ney NSW 2000\, Australia
+URL:https://tai-eval.github.io/schedule/
+STATUS:TENTATIVE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS session soon
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e035.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:TAE invited talks 3–4
+DTSTART;TZID=Australia/Sydney:20261212T124500
+DTEND;TZID=Australia/Sydney:20261212T141500
+DESCRIPTION:High-value evaluation/robustness talks.\nhttps://tai-eval.gi
+ thub.io/schedule/
+LOCATION:ICC Sydney\, Meeting Rooms C2.2 & C2.3\, 14 Darling Drive\, Syd
+ ney NSW 2000\, Australia
+URL:https://tai-eval.github.io/schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:e036.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:TAE Poster Session 2 — possible assignment
+DTSTART;TZID=Australia/Sydney:20261212T141500
+DTEND;TZID=Australia/Sydney:20261212T150000
+DESCRIPTION:Your assigned session is not published\; do not assume you p
+ resent in this block.\nStatus: assignment-unverified (planning / confir
+ mation required).\nhttps://tai-eval.github.io/schedule/
+LOCATION:ICC Sydney\, Meeting Rooms C2.2 & C2.3\, 14 Darling Drive\, Syd
+ ney NSW 2000\, Australia
+URL:https://tai-eval.github.io/schedule/
+STATUS:TENTATIVE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:NeurIPS session soon
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e037.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:TAE evaluation panel
+DTSTART;TZID=Australia/Sydney:20261212T160000
+DTEND;TZID=Australia/Sydney:20261212T164500
+DESCRIPTION:Discussion of evaluation\, robustness\, and risk.\nhttps://t
+ ai-eval.github.io/schedule/
+LOCATION:ICC Sydney\, Meeting Rooms C2.2 & C2.3\, 14 Darling Drive\, Syd
+ ney NSW 2000\, Australia
+URL:https://tai-eval.github.io/schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:e038.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:MATS Research — Scaling AI Safety & Security
+DTSTART;TZID=Australia/Sydney:20261206T120000
+DTEND;TZID=Australia/Sydney:20261206T130000
+DESCRIPTION:Strong match for frontier-model safety research.\nhttps://qr
+ sntu.org/service/neurips26/event/180201/
+LOCATION:ICC Sydney\, Grand Ballroom B2 & B3\, 14 Darling Drive\, Sydney
+  NSW 2000\, Australia
+URL:https://qrsntu.org/service/neurips26/event/180201/
+END:VEVENT
+END:VCALENDAR

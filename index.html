@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101b2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="NeurIPS Guide">
+<meta name="description" content="Your offline-ready NeurIPS 2026 Sydney conference guide">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+<title>NeurIPS · Sydney Guide</title>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><div class="brand-logo">N<span>26</span></div><div><div class="eyebrow">YOUR CONFERENCE COMPANION</div><div class="brand-title">NeurIPS <span>Sydney</span></div></div></div>
+    <button id="menuButton" class="icon-button" aria-label="Options">⋯</button>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading">Preparing your guide…</div></main>
+  <nav class="tabbar" aria-label="Main navigation">
+    <button data-tab="today" class="active"><span class="tabicon">◉</span><span>Home</span></button>
+    <button data-tab="schedule"><span class="tabicon">▦</span><span>Schedule</span></button>
+    <button data-tab="posters"><span class="tabicon">▤</span><span>Posters</span></button>
+    <button data-tab="expo"><span class="tabicon">⌁</span><span>Expo</span></button>
+    <button data-tab="tasks"><span class="tabicon">✓</span><span>Tasks</span></button>
+  </nav>
+</div>
+<div id="overlay" class="overlay hidden" role="presentation"><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"><div class="sheet-handle"></div><div class="sheet-header"><h2 id="sheetTitle"></h2><button id="closeSheet" class="icon-button" aria-label="Close">×</button></div><div id="sheetBody"></div></section></div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script src="app.js" defer></script>
+</body>
+</html>

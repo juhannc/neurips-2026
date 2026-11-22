@@ -1,0 +1,400 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//NeurIPS Sydney 2026 Personal Guide//EN
+X-WR-CALNAME:NeurIPS Sydney · Optional poster route
+X-WR-TIMEZONE:Australia/Sydney
+BEGIN:VTIMEZONE
+TZID:Australia/Sydney
+X-LIC-LOCATION:Australia/Sydney
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+1000
+TZOFFSETTO:+1100
+TZNAME:AEDT
+DTSTART:19701004T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+1100
+TZOFFSETTO:+1000
+TZNAME:AEST
+DTSTART:19700405T030000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:p01.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S1: Causality can systematically address the mon
+ sters under the bench(marks)
+DTSTART;TZID=Australia/Sydney:20261208T101000
+DTEND;TZID=Australia/Sydney:20261208T102500
+DESCRIPTION:Evaluation validity\; safety claims. · Suggested stop only.
+  Poster stand number not verified.\nStatus: suggested (planning / confi
+ rmation required).\nhttps://neurips.cc/virtual/2026/poster/140063
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/140063
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p02.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S1: Colosseum: Auditing Collusion in Cooperative
+  Multi-Agent Systems
+DTSTART;TZID=Australia/Sydney:20261208T103000
+DTEND;TZID=Australia/Sydney:20261208T104500
+DESCRIPTION:Safety auditing. · Suggested stop only. Poster stand number
+  not verified.\nStatus: suggested (planning / confirmation required).\n
+ https://neurips.cc/virtual/2026/poster/138980
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/138980
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p03.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S1: Neural Bayesian Filtering
+DTSTART;TZID=Australia/Sydney:20261208T105000
+DTEND;TZID=Australia/Sydney:20261208T110500
+DESCRIPTION:Uncertainty and state estimation\; Sony. · Suggested stop o
+ nly. Poster stand number not verified.\nStatus: suggested (planning / c
+ onfirmation required).\nhttps://neurips.cc/virtual/2026/poster/154508
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/154508
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p04.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S1: Strong Post-Training from Permissive\, Reaso
+ ning-Dominant\, Web-Scale Pretraining
+DTSTART;TZID=Australia/Sydney:20261208T111000
+DTEND;TZID=Australia/Sydney:20261208T112500
+DESCRIPTION:Frontier model post-training. · Suggested stop only. Poster
+  stand number not verified.\nStatus: suggested (planning / confirmation
+  required).\nhttps://neurips.cc/virtual/2026/poster/153271
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/153271
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p05.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S1: Transferability for General Reasoning: An Au
+ tomated Curriculum for Multi-Domain LLM RL
+DTSTART;TZID=Australia/Sydney:20261208T113000
+DTEND;TZID=Australia/Sydney:20261208T114500
+DESCRIPTION:Generalization and RL. · Suggested stop only. Poster stand 
+ number not verified.\nStatus: suggested (planning / confirmation requir
+ ed).\nhttps://neurips.cc/virtual/2026/poster/153605
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/153605
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p06.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S2: FutureSim: Replaying World Events to Evaluat
+ e Adaptive Agents
+DTSTART;TZID=Australia/Sydney:20261208T170300
+DTEND;TZID=Australia/Sydney:20261208T171200
+DESCRIPTION:Changing conditions / ODD. · Suggested stop only. Poster st
+ and number not verified.\nStatus: suggested (planning / confirmation re
+ quired).\nhttps://neurips.cc/virtual/2026/poster/139347
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/139347
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p07.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S2: Learning POMDP World Models from Observation
+ s with Language-Model Priors
+DTSTART;TZID=Australia/Sydney:20261208T171300
+DTEND;TZID=Australia/Sydney:20261208T172200
+DESCRIPTION:Partial observability. · Suggested stop only. Poster stand 
+ number not verified.\nStatus: suggested (planning / confirmation requir
+ ed).\nhttps://neurips.cc/virtual/2026/poster/155829
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/155829
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p08.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S2: ROTATE: Regret-driven Open-ended Training fo
+ r Ad Hoc Teamwork
+DTSTART;TZID=Australia/Sydney:20261208T172300
+DTEND;TZID=Australia/Sydney:20261208T173200
+DESCRIPTION:Multi-agent RL\; Sony. · Suggested stop only. Poster stand 
+ number not verified.\nStatus: suggested (planning / confirmation requir
+ ed).\nhttps://neurips.cc/virtual/2026/poster/150582
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/150582
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p09.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S2: Stabilizing Extrapolation in Looped Transfor
+ mers via Learned Stochastic Stopping
+DTSTART;TZID=Australia/Sydney:20261208T173300
+DTEND;TZID=Australia/Sydney:20261208T174200
+DESCRIPTION:Extrapolation robustness. · Suggested stop only. Poster sta
+ nd number not verified.\nStatus: suggested (planning / confirmation req
+ uired).\nhttps://neurips.cc/virtual/2026/poster/152714
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/152714
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p10.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S2: Improved State Mixing in Higher-order and Bl
+ ock Diagonal Linear Recurrent Networks
+DTSTART;TZID=Australia/Sydney:20261208T174300
+DTEND;TZID=Australia/Sydney:20261208T175200
+DESCRIPTION:Representation architectures. · Suggested stop only. Poster
+  stand number not verified.\nStatus: suggested (planning / confirmation
+  required).\nhttps://neurips.cc/virtual/2026/poster/152218
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/152218
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p11.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S3: Instrumental Choices: Measuring the Propensi
+ ty of LLM Agents to Pursue Instrumental Behaviors
+DTSTART;TZID=Australia/Sydney:20261209T101000
+DTEND;TZID=Australia/Sydney:20261209T102500
+DESCRIPTION:Agent safety evaluation. · Suggested stop only. Poster stan
+ d number not verified.\nStatus: suggested (planning / confirmation requ
+ ired).\nhttps://neurips.cc/virtual/2026/poster/139624
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/139624
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p12.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S3: No More\, No Less: Task Alignment in Termina
+ l Agents
+DTSTART;TZID=Australia/Sydney:20261209T103000
+DTEND;TZID=Australia/Sydney:20261209T104500
+DESCRIPTION:Agent task alignment. · Suggested stop only. Poster stand n
+ umber not verified.\nStatus: suggested (planning / confirmation require
+ d).\nhttps://neurips.cc/virtual/2026/poster/139104
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/139104
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p13.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S3: Fixed-Point Reasoning: Stable and Adaptive D
+ eep Looped Models
+DTSTART;TZID=Australia/Sydney:20261209T105000
+DTEND;TZID=Australia/Sydney:20261209T110500
+DESCRIPTION:Stable decisions. · Suggested stop only. Poster stand numbe
+ r not verified.\nStatus: suggested (planning / confirmation required).\
+ nhttps://neurips.cc/virtual/2026/poster/148540
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/148540
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p14.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S3: The Alien Space of Science: Sampling Coheren
+ t but Cognitively Unavailable Research Directions
+DTSTART;TZID=Australia/Sydney:20261209T111000
+DTEND;TZID=Australia/Sydney:20261209T112500
+DESCRIPTION:Open-ended discovery. · Suggested stop only. Poster stand n
+ umber not verified.\nStatus: suggested (planning / confirmation require
+ d).\nhttps://neurips.cc/virtual/2026/poster/152222
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/152222
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p15.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S3: Structuring Open-Ended NAS: Semi-Automated D
+ esign Knowledge Structuring with LLMs for Efficient Neural Architecture
+  Search
+DTSTART;TZID=Australia/Sydney:20261209T113000
+DTEND;TZID=Australia/Sydney:20261209T114500
+DESCRIPTION:Industry\; Sony\; search and architecture. · Suggested stop
+  only. Poster stand number not verified.\nStatus: suggested (planning /
+  confirmation required).\nhttps://neurips.cc/virtual/2026/poster/151464
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/151464
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p21.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S5: Omni-Interactive Universal Embedder
+DTSTART;TZID=Australia/Sydney:20261210T101000
+DTEND;TZID=Australia/Sydney:20261210T102500
+DESCRIPTION:DART embeddings\; Sony. · Suggested stop only. Poster stand
+  number not verified.\nStatus: suggested (planning / confirmation requi
+ red).\nhttps://neurips.cc/virtual/2026/poster/155508
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/155508
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p22.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S5: Intrinsically Interpretable Attention via Sp
+ arse Post-Training
+DTSTART;TZID=Australia/Sydney:20261210T103000
+DTEND;TZID=Australia/Sydney:20261210T104500
+DESCRIPTION:Interpretability. · Suggested stop only. Poster stand numbe
+ r not verified.\nStatus: suggested (planning / confirmation required).\
+ nhttps://neurips.cc/virtual/2026/poster/152659
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/152659
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p23.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S5: Making LoRA Identifiable: Orthogonal Alignme
+ nt for Continual Learning
+DTSTART;TZID=Australia/Sydney:20261210T105000
+DTEND;TZID=Australia/Sydney:20261210T110500
+DESCRIPTION:Representation stability\; Sony. · Suggested stop only. Pos
+ ter stand number not verified.\nStatus: suggested (planning / confirmat
+ ion required).\nhttps://neurips.cc/virtual/2026/poster/155348
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/155348
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p24.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S5: Partition\, Prompt\, Aggregate: Statistical 
+ Self-Consistency in Language Models
+DTSTART;TZID=Australia/Sydney:20261210T111000
+DTEND;TZID=Australia/Sydney:20261210T112500
+DESCRIPTION:Decision reliability. · Suggested stop only. Poster stand n
+ umber not verified.\nStatus: suggested (planning / confirmation require
+ d).\nhttps://neurips.cc/virtual/2026/poster/149804
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/149804
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p25.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S5: DDMS: Discriminative Distillation of Multi-v
+ iew Foundational Features into Single-view Models
+DTSTART;TZID=Australia/Sydney:20261210T113000
+DTEND;TZID=Australia/Sydney:20261210T114500
+DESCRIPTION:Representation transfer\; Sony. · Suggested stop only. Post
+ er stand number not verified.\nStatus: suggested (planning / confirmati
+ on required).\nhttps://neurips.cc/virtual/2026/poster/148341
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/148341
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p26.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S6: Claudini: Autoresearch Discovers State-of-th
+ e-Art Adversarial Attack Algorithms for LLMs
+DTSTART;TZID=Australia/Sydney:20261210T170300
+DTEND;TZID=Australia/Sydney:20261210T171200
+DESCRIPTION:Robustness evaluation. · Suggested stop only. Poster stand 
+ number not verified.\nStatus: suggested (planning / confirmation requir
+ ed).\nhttps://neurips.cc/virtual/2026/poster/154015
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/154015
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p27.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S6: Skill-Inject: Measuring Agent Vulnerability 
+ to Skill File Attacks
+DTSTART;TZID=Australia/Sydney:20261210T171300
+DTEND;TZID=Australia/Sydney:20261210T172200
+DESCRIPTION:Agent safety. · Suggested stop only. Poster stand number no
+ t verified.\nStatus: suggested (planning / confirmation required).\nhtt
+ ps://neurips.cc/virtual/2026/poster/139261
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/139261
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p28.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S6: SuperSycophantic: Stress-Testing Frontier LL
+ Ms from Single- to Multi-Turn Sycophancy
+DTSTART;TZID=Australia/Sydney:20261210T172300
+DTEND;TZID=Australia/Sydney:20261210T173200
+DESCRIPTION:Robustness\, frontier LLMs. · Suggested stop only. Poster s
+ tand number not verified.\nStatus: suggested (planning / confirmation r
+ equired).\nhttps://neurips.cc/virtual/2026/poster/148794
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/148794
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p29.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S6: STRABLE: Benchmarking Tabular Machine Learni
+ ng with Strings
+DTSTART;TZID=Australia/Sydney:20261210T173300
+DTEND;TZID=Australia/Sydney:20261210T174200
+DESCRIPTION:OOD/generalization. · Suggested stop only. Poster stand num
+ ber not verified.\nStatus: suggested (planning / confirmation required)
+ .\nhttps://neurips.cc/virtual/2026/poster/139430
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/139430
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:p30.neurips2026@personal-guide
+DTSTAMP:20261122T090000Z
+SUMMARY:Optional poster S6: Continuous Open-ended Discovery and Evolutio
+ n of Skills as Hierarchical Reward Programs
+DTSTART;TZID=Australia/Sydney:20261210T174300
+DTEND;TZID=Australia/Sydney:20261210T175200
+DESCRIPTION:Robotics RL\; Sony. · Suggested stop only. Poster stand num
+ ber not verified.\nStatus: suggested (planning / confirmation required)
+ .\nhttps://neurips.cc/virtual/2026/poster/149488
+LOCATION:ICC Sydney\, Exhibition Centre Level 1\, Halls 1–4\, 14 Darli
+ ng Drive\, Sydney NSW 2000\, Australia
+URL:https://neurips.cc/virtual/2026/poster/149488
+STATUS:TENTATIVE
+END:VEVENT
+END:VCALENDAR
