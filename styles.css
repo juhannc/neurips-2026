@@ -67,3 +67,7 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
 .calendar-background-session span{display:block;max-width:100%;overflow-wrap:anywhere}
 .calendar-hour time{pointer-events:none}
 @media (min-width:600px){.calendar-event-name{font-size:12px}.calendar-event-time{font-size:11px}}
+
+/* The header uses only the dotted NeurIPS mark. */
+.topbar .brand img.brand-logo.official-header-logo{width:44px;height:44px;min-width:44px;max-width:44px;padding:3px;object-fit:contain}
+@media(max-width:370px){.topbar .brand img.brand-logo.official-header-logo{width:40px;height:40px;min-width:40px;max-width:40px}}
