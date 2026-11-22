@@ -65,6 +65,9 @@ img.brand-logo{display:block;object-fit:contain;background:white;border-radius:1
 .calendar-event.compact .calendar-event-name{font-size:9px}
 .calendar-background-session{position:absolute;z-index:1;left:44px;right:2px;display:block;text-align:left;background:rgba(150,125,74,.13);border:1px dashed rgba(223,191,132,.5);border-left:3px solid #dcbf8b;border-radius:8px;color:#ebce9c;padding:6px;font-size:10px;font-weight:700;cursor:pointer;overflow:hidden}
 .calendar-background-session span{display:block;max-width:100%;overflow-wrap:anywhere}
+/* Keep the title of long-running/full-day calendar events at the top, not vertically centered. */
+.calendar-background-session{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left}
+.calendar-background-session>span{flex:none;align-self:flex-start;line-height:1.35}
 .calendar-hour time{pointer-events:none}
 @media (min-width:600px){.calendar-event-name{font-size:12px}.calendar-event-time{font-size:11px}}
 
