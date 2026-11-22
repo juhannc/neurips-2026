@@ -36,3 +36,7 @@ python3 -m http.server 8765
 ```
 
 Open `http://localhost:8765` in a browser. The service worker works on HTTPS and localhost.
+
+## RSVP and invitations
+
+The **RSVP** tab tracks 18 prioritized signups and presentation-confirmation tasks, with verified links, potential clashes, and local statuses: Needs action, Applied, Confirmed, Scheduled, Waitlisted, or Skip. A scheduled event does **not** imply approved admission. Event information lives in `registrations.json`; personal statuses stay in browser storage and are included in JSON backup.
