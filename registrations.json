@@ -5,10 +5,12 @@
     "day": "2026-12-08",
     "time": "18:00–22:00",
     "priority": 1,
-    "defaultStatus": "scheduled",
-    "action": "Verify your invitation and venue",
+    "defaultStatus": "confirmed",
+    "action": "Registered — confirm venue and arrival instructions",
     "url": "",
-    "conflict": "Conflicts with Intel Rooftop and Session 2"
+    "conflict": "Conflicts with Intel Rooftop and Session 2",
+    "external": true,
+    "afterHoursRank": 1
   },
   {
     "id": "nvidia-celebration",
@@ -16,10 +18,12 @@
     "day": "2026-12-10",
     "time": "18:00–22:00",
     "priority": 1,
-    "defaultStatus": "scheduled",
-    "action": "Verify host approval and venue",
+    "defaultStatus": "confirmed",
+    "action": "Registered — confirm venue and arrival instructions",
     "url": "https://luma.com/neurips-research-celebration",
-    "conflict": "Conflicts with GSA dinner and Session 6"
+    "conflict": "Conflicts with GSA dinner and Session 6",
+    "external": true,
+    "afterHoursRank": 2
   },
   {
     "id": "intel-rooftop",
@@ -27,10 +31,12 @@
     "day": "2026-12-08",
     "time": "18:00–21:00",
     "priority": 4,
-    "defaultStatus": "scheduled",
-    "action": "Verify invite and venue",
+    "defaultStatus": "confirmed",
+    "action": "Registered — confirm venue and arrival instructions",
     "url": "",
-    "conflict": "Conflicts with Research Exchange"
+    "conflict": "Conflicts with Research Exchange",
+    "external": true,
+    "afterHoursRank": 18
   },
   {
     "id": "optiver-play",
@@ -41,7 +47,9 @@
     "defaultStatus": "scheduled",
     "action": "Confirm time and venue; only attend after your poster if possible",
     "url": "",
-    "conflict": "Your autoSAFE poster runs 17:00–20:00"
+    "conflict": "Your autoSAFE poster runs 17:00–20:00",
+    "external": true,
+    "afterHoursRank": 8
   },
   {
     "id": "gsa-dinner",
@@ -52,7 +60,9 @@
     "defaultStatus": "todo",
     "action": "Apply for host approval",
     "url": "https://luma.com/qekw5st2",
-    "conflict": "Conflicts with NVIDIA celebration"
+    "conflict": "Conflicts with NVIDIA celebration",
+    "external": true,
+    "afterHoursRank": 4
   },
   {
     "id": "breakthrough",
@@ -63,7 +73,9 @@
     "defaultStatus": "todo",
     "action": "Request approval and confirm ferry logistics",
     "url": "https://luma.com/breakthroughisland-neurips",
-    "conflict": "Conflicts with Research Exchange"
+    "conflict": "Conflicts with Research Exchange",
+    "external": true,
+    "afterHoursRank": 6
   },
   {
     "id": "airtree",
@@ -74,7 +86,9 @@
     "defaultStatus": "waitlist",
     "action": "Join waitlist; attend after your poster only",
     "url": "https://luma.com/a9fnug18",
-    "conflict": "AutoSAFE poster until 20:00"
+    "conflict": "AutoSAFE poster until 20:00",
+    "external": true,
+    "afterHoursRank": 11
   },
   {
     "id": "ai-infra",
@@ -85,7 +99,9 @@
     "defaultStatus": "todo",
     "action": "Apply only as a backup",
     "url": "https://luma.com/sglang-ikbr",
-    "conflict": "Research Exchange overlaps"
+    "conflict": "Research Exchange overlaps",
+    "external": true,
+    "afterHoursRank": 12
   },
   {
     "id": "ubiquant",
@@ -96,7 +112,9 @@
     "defaultStatus": "todo",
     "action": "Apply and verify evening session",
     "url": "https://www.wjx.cn/vm/tRsGh3S.aspx",
-    "conflict": "Earlier sessions conflict with your poster"
+    "conflict": "Earlier sessions conflict with your poster",
+    "external": true,
+    "afterHoursRank": 10
   },
   {
     "id": "ai-safety-social",
@@ -107,7 +125,9 @@
     "defaultStatus": "waitlist",
     "action": "Check whether waitlist reopens",
     "url": "https://qrsntu.org/service/neurips26/socials/",
-    "conflict": "NVIDIA celebration overlaps"
+    "conflict": "NVIDIA celebration overlaps",
+    "external": true,
+    "afterHoursRank": 9
   },
   {
     "id": "gmi",
@@ -118,7 +138,9 @@
     "defaultStatus": "todo",
     "action": "Check RSVP if preferred events unavailable",
     "url": "https://qrsntu.org/service/neurips26/socials/",
-    "conflict": "Research Exchange overlaps"
+    "conflict": "Research Exchange overlaps",
+    "external": true,
+    "afterHoursRank": 17
   },
   {
     "id": "dead-reckoning",
@@ -129,7 +151,9 @@
     "defaultStatus": "todo",
     "action": "Check registration as backup",
     "url": "https://qrsntu.org/service/neurips26/socials/",
-    "conflict": "Research Exchange overlaps"
+    "conflict": "Research Exchange overlaps",
+    "external": true,
+    "afterHoursRank": 16
   },
   {
     "id": "robot-learning",
@@ -140,7 +164,8 @@
     "defaultStatus": "todo",
     "action": "Confirm your individual Friday poster assignment",
     "url": "https://www.robot-learning.ml/2026/schedule/",
-    "conflict": "Protected presentation"
+    "conflict": "Protected presentation",
+    "external": false
   },
   {
     "id": "tae",
@@ -151,7 +176,8 @@
     "defaultStatus": "todo",
     "action": "Ask organizers which session includes your paper",
     "url": "https://tai-eval.github.io/schedule/",
-    "conflict": "Do not block both as confirmed"
+    "conflict": "Do not block both as confirmed",
+    "external": false
   },
   {
     "id": "conference",
@@ -162,7 +188,8 @@
     "defaultStatus": "todo",
     "action": "Confirm your QR/badge and workshop access",
     "url": "https://neurips.cc/Conferences/2026",
-    "conflict": "Required for entry"
+    "conflict": "Required for entry",
+    "external": false
   },
   {
     "id": "formal",
@@ -173,7 +200,8 @@
     "defaultStatus": "todo",
     "action": "Check conference access requirements",
     "url": "https://qrsntu.org/service/neurips26/event/137740/",
-    "conflict": "Strong alignment with autoSAFE"
+    "conflict": "Strong alignment with autoSAFE",
+    "external": false
   },
   {
     "id": "jump",
@@ -184,7 +212,9 @@
     "defaultStatus": "todo",
     "action": "Check entry via conference registration",
     "url": "https://qrsntu.org/service/neurips26/event/180197/",
-    "conflict": "Expo Day"
+    "conflict": "Expo Day",
+    "external": false,
+    "afterHoursRank": 5
   },
   {
     "id": "two-sigma",
@@ -195,6 +225,7 @@
     "defaultStatus": "todo",
     "action": "Check access via conference badge",
     "url": "https://qrsntu.org/service/neurips26/event/180212/",
-    "conflict": "Competes with other expo talks"
+    "conflict": "Competes with other expo talks",
+    "external": false
   }
 ]
