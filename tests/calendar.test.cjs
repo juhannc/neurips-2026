@@ -37,4 +37,40 @@ assert(ics.includes('STATUS:TENTATIVE'));
 assert(ics.includes('\r\n'));
 assert.equal(context.buildSingle(guide.events[0]).filter(s=>s==='BEGIN:VEVENT').length,1);
 for(const line of ics.split('\r\n')){if(!line)continue;assert(Buffer.byteLength(line,'utf8')<=75,'unfolded line >75 bytes: '+line.slice(0,50));}
+
+// Home pickup card is shown only on presentation days, with independent completion.
+const pickupSource=source.slice(source.indexOf('const pickupTaskByDay='),source.indexOf('function renderToday(){'));
+assert(pickupSource.includes('function renderPosterPickup(day)'));
+const pickupCtx={guide,store:{checks:{}},escapeHTML:String,isChecked(id){return !!this.store.checks[id]}};
+pickupCtx.isChecked=id=>!!pickupCtx.store.checks[id];
+vm.runInNewContext(pickupSource+';this.pickup=renderPosterPickup;',pickupCtx);
+for(const day of ['2026-12-06','2026-12-07','2026-12-08','2026-12-10']){
+ assert.equal(pickupCtx.pickup(day),'','Pickup card must be absent on '+day);
+}
+assert(pickupCtx.pickup('2026-12-09').includes('15:00–15:20'));
+assert(pickupCtx.pickup('2026-12-11').includes('10:50–11:10'));
+assert(pickupCtx.pickup('2026-12-12').includes('09:00–09:20 or 12:15–12:35'));
+assert(!pickupCtx.pickup('2026-12-09').includes('Mon 08:00'));
+pickupCtx.store.checks['t-poster-pickup']=true;
+assert.equal(pickupCtx.pickup('2026-12-09'),'');
+assert(pickupCtx.pickup('2026-12-11').includes('Printed poster pickup'));
+assert(pickupCtx.pickup('2026-12-12').includes('Printed poster pickup'));
+pickupCtx.store.checks['t-poster-pickup-wrl']=true;
+assert.equal(pickupCtx.pickup('2026-12-11'),'');
+assert(pickupCtx.pickup('2026-12-12').includes('Printed poster pickup'));
+pickupCtx.store.checks['t-poster-pickup-tae']=true;
+assert.equal(pickupCtx.pickup('2026-12-12'),'');
+assert(!source.slice(source.indexOf('function renderSchedule(){'),source.indexOf('function renderPosters(){')).includes('renderPosterPickup('));
+const daySource=source.slice(source.indexOf('const todaySydney='),source.indexOf('const currentSydneyTime='));
+for(const [iso,expected] of [
+ ['2026-12-08T12:59:00Z','2026-12-08'],
+ ['2026-12-08T13:00:00Z','2026-12-09'],
+ ['2026-12-11T13:00:00Z','2026-12-12']
+]){
+ const fake={...Date,now:()=>Date.parse(iso)};
+ const dayCtx={Intl,Date:class extends Date{constructor(){super(iso)}}};
+ vm.runInNewContext(daySource+';this.day=todaySydney();',dayCtx);
+ assert.equal(dayCtx.day,expected,'Wrong Sydney day at '+iso);
+}
+
 console.log(`Calendar export passed: ${guide.events.length} events, Australia/Sydney TZ, unknown-time safeguards`);
