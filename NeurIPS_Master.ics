@@ -574,4 +574,65 @@ LOCATION:ICC Sydney\, Darling Harbour Theatre\, 14 Darling Drive\, Sydne
 URL:https://qrsntu.org/service/neurips26/event/180203/
 STATUS:TENTATIVE
 END:VEVENT
+BEGIN:VEVENT
+UID:pickup-main.neurips2026@personal-guide
+DTSTAMP:20261123T000000Z
+SUMMARY:Pick up autoSAFE poster — before 17:00 session
+DTSTART;TZID=Australia/Sydney:20261209T150000
+DTEND;TZID=Australia/Sydney:20261209T152000
+LOCATION:ICC Sydney\, Exhibition Centre\, Level 2\, Registration Desk 4\, 1
+ 4 Darling Drive\, Sydney NSW 2000\, Australia
+DESCRIPTION:Collect shortly before your main-track poster presentation\; se
+ ssion starts at 17:00. Poster collection: Exhibition Centre Level 2\, Regi
+ stration Desk 4. See the ICC Sydney Level 2 floor plan.
+URL:https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-pl
+ ans_level-two.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:pickup-wrl.neurips2026@personal-guide
+DTSTAMP:20261123T000000Z
+SUMMARY:Pick up Robot Learning workshop poster
+DTSTART;TZID=Australia/Sydney:20261211T105000
+DTEND;TZID=Australia/Sydney:20261211T111000
+LOCATION:ICC Sydney\, Exhibition Centre\, Level 2\, Registration Desk 4\, 1
+ 4 Darling Drive\, Sydney NSW 2000\, Australia
+DESCRIPTION:Two hours before the 12:50 WRL poster window. Individual poster
+  assignment not confirmed. Poster collection: Exhibition Centre Level 2\, 
+ Registration Desk 4. See the ICC Sydney Level 2 floor plan.
+URL:https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-pl
+ ans_level-two.pdf
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:pickup-tae-1.neurips2026@personal-guide
+DTSTAMP:20261123T000000Z
+SUMMARY:Pick up TAE poster — if assigned 11:00 session
+DTSTART;TZID=Australia/Sydney:20261212T090000
+DTEND;TZID=Australia/Sydney:20261212T092000
+LOCATION:ICC Sydney\, Exhibition Centre\, Level 2\, Registration Desk 4\, 1
+ 4 Darling Drive\, Sydney NSW 2000\, Australia
+DESCRIPTION:Alternative A only: collect two hours before a potential 11:00 
+ TAE session. Ignore if assigned to the afternoon. Poster collection: Exhib
+ ition Centre Level 2\, Registration Desk 4. See the ICC Sydney Level 2 flo
+ or plan.
+URL:https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-pl
+ ans_level-two.pdf
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:pickup-tae-2.neurips2026@personal-guide
+DTSTAMP:20261123T000000Z
+SUMMARY:Pick up TAE poster — if assigned 14:15 session
+DTSTART;TZID=Australia/Sydney:20261212T121500
+DTEND;TZID=Australia/Sydney:20261212T123500
+LOCATION:ICC Sydney\, Exhibition Centre\, Level 2\, Registration Desk 4\, 1
+ 4 Darling Drive\, Sydney NSW 2000\, Australia
+DESCRIPTION:Alternative B only: collect two hours before a potential 14:15 
+ TAE session. Ignore if assigned to the morning. Poster collection: Exhibit
+ ion Centre Level 2\, Registration Desk 4. See the ICC Sydney Level 2 floor
+  plan.
+URL:https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-pl
+ ans_level-two.pdf
+STATUS:TENTATIVE
+END:VEVENT
 END:VCALENDAR
