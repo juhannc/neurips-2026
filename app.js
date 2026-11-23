@@ -8,7 +8,12 @@ const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 const cleanURL=s=>{try{const u=new URL(s,location.href);return ['https:','http:'].includes(u.protocol)?u.href:null}catch{return null}};
 const link=(url,label,cls='btn secondary sm')=>cleanURL(url)?`<a class="${cls}" href="${escapeHTML(cleanURL(url))}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)} ↗</a>`:'';
 const fmtDay=d=>new Date(`${d}T12:00:00Z`).toLocaleDateString('en-AU',{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'});
-const todaySydney=()=>new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+// Use numeric date parts: iOS/WebKit can format en-CA dates differently by locale.
+const todaySydney=()=>{
+ const parts=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+ const get=type=>parts.find(p=>p.type===type).value;
+ return get('year')+'-'+get('month')+'-'+get('day');
+};
 const currentSydneyTime=()=>new Intl.DateTimeFormat('en-GB',{timeZone:TZ,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date());
 const initialDay=()=>{const t=todaySydney();return DAYS.includes(t)?t:t<'2026-12-06'?DAYS[0]:DAYS.at(-1)};
 let guide={events:[],posters:[],booths:[],todos:[],sources:[]};
@@ -49,23 +54,34 @@ function eventCard(e){const locked=e.title.includes('PRESENT autoSAFE')||e.title
 function itemCard(p,i){return `<article class="list-card ${isChecked(p.id)?'done':''}"><div class="item"><div class="rank">${i+1}</div><div class="item-content"><div class="small muted">Session ${p.session}${p.delegated?' · Delegate to coauthor':''}</div><h3>${escapeHTML(p.title)}</h3><p>${escapeHTML(p.reason)}</p><div class="context-actions">${link(p.url,'Poster page')}<button class="btn secondary sm" data-open="poster:${escapeHTML(p.id)}">Notes / details</button></div></div><button class="check ${isChecked(p.id)?'checked':''}" data-check="${escapeHTML(p.id)}" aria-label="${isChecked(p.id)?'Mark not visited':'Mark visited'}">✓</button></div></article>`}
 function eventList(events){return [...events].sort((a,b)=>(a.start||'99:99').localeCompare(b.start||'99:99')).map(eventCard).join('')||'<div class="empty">No events match these filters.</div>'}
 function summary(){const n=guide.posters.filter(p=>isChecked(p.id)).length;const b=guide.booths.filter(p=>isChecked(p.id)).length;const tasks=[...guide.todos,...store.tasks];return `<div class="metric-grid"><div class="metric"><strong>${n}/${guide.posters.length}</strong><span>Posters visited</span></div><div class="metric"><strong>${b}/${guide.booths.length}</strong><span>Expo contacts</span></div><div class="metric"><strong>${tasks.filter(t=>isChecked(t.id)).length}/${tasks.length}</strong><span>Tasks completed</span></div></div>`}
+// These are three distinct physical posters. Completing one must never hide another.
+const pickupTaskByDay={
+ '2026-12-09':'t-poster-pickup',
+ '2026-12-11':'t-poster-pickup-wrl',
+ '2026-12-12':'t-poster-pickup-tae'
+};
+const pickupEventTask={
+ 'pickup-main':'t-poster-pickup',
+ 'pickup-wrl':'t-poster-pickup-wrl',
+ 'pickup-tae-1':'t-poster-pickup-tae',
+ 'pickup-tae-2':'t-poster-pickup-tae'
+};
 function renderPosterPickup(day){
  const p=guide.posterPickup;
- if(!p)return '';
- const days=[['2026-12-07','Mon'],['2026-12-08','Tue'],['2026-12-09','Wed'],['2026-12-10','Thu'],['2026-12-11','Fri'],['2026-12-12','Sat']];
- const todayHours=p.hours[day];
- const task=day==='2026-12-11'?'t-poster-pickup-wrl':day==='2026-12-12'?'t-poster-pickup-tae':'t-poster-pickup';
- const picked=isChecked(task);
- return `<section class="panel poster-pickup" aria-label="Printed poster pickup">
- <div class="headrow"><h3>Printed poster pickup</h3><span class="pill ${picked?'green':'gold'}">${picked?'Collected':'To collect'}</span></div>
+ const task=pickupTaskByDay[day];
+ if(!p || !task || isChecked(task))return '';
+ const hours=p.hours[day];
+ const pickupTime=day==='2026-12-09'?'15:00–15:20':day==='2026-12-11'?'10:50–11:10':'09:00–09:20 or 12:15–12:35 (assignment TBC)';
+ const paper=day==='2026-12-09'?'autoSAFE':day==='2026-12-11'?'Robot Learning':'TAE';
+ return `<section class="panel poster-pickup" aria-label="${paper} poster pickup">
+ <div class="headrow"><h3>Printed poster pickup · ${paper}</h3><span class="pill gold">To collect</span></div>
  <p class="small"><strong>Exhibition Centre · Level 2 · Registration Desk 4</strong></p>
- ${todayHours?`<p class="small">Selected day: <strong>${escapeHTML(todayHours[0])}–${escapeHTML(todayHours[1])}</strong> (Sydney time)</p>`:'<p class="small muted">Pickup starts Monday 7 December.</p>'}
- <div class="pickup-hours">${days.map(([date,name])=>`<span class="${date===day?'selected':''}">${name} ${escapeHTML(p.hours[date].join('–'))}</span>`).join('')}</div>
- <p class="small muted">Inside the Exhibition Centre: follow Level 2 signs to Registration 4, outside Hall 4. The floor plan is static, not indoor GPS.</p>
- <div class="context-actions"><a class="btn secondary sm" href="${escapeHTML(p.floorPlanUrl)}" target="_blank" rel="noopener noreferrer">Level 2 floor plan ↗</a><button class="btn secondary sm" data-check="${task}">${picked?'Mark not collected':'Mark collected ✓'}</button></div>
+ <p class="small">Pickup reminder: <strong>${escapeHTML(pickupTime)}</strong>${day==='2026-12-12'?' · one alternative only':''}</p>
+ <p class="small muted">Desk hours today: ${escapeHTML(hours.join('–'))} AEDT</p>
+ <div class="context-actions"><a class="btn secondary sm" href="${escapeHTML(p.floorPlanUrl)}" target="_blank" rel="noopener noreferrer">Level 2 floor plan ↗</a><button class="btn secondary sm" data-check="${task}">Mark collected ✓</button></div>
  </section>`;
 }
-function renderToday(){const day=state.day;const items=allEvents().filter(e=>e.day===day);const next=allEvents().filter(e=>e.day>=day && e.start).sort((a,b)=>(a.day+a.start).localeCompare(b.day+b.start)).slice(0,4);return `<div class="home-intro"><span class="pill green">Sydney · ${escapeHTML(currentSydneyTime())} AEDT</span><a class="pill venue-map-link" href="https://www.google.com/maps/search/?api=1&query=ICC%20Sydney%2C%2014%20Darling%20Drive%2C%20Sydney%20NSW%202000%2C%20Australia" target="_blank" rel="noopener noreferrer" aria-label="Open ICC Sydney in Google Maps">December 6–12 · ICC Sydney ↗</a></div><div class="headrow"><h2>Your week at a glance</h2><button class="btn secondary sm" data-tab="schedule">Full schedule ↗</button></div>${summary()}<div class="panel"><div class="headrow"><strong>Invitations & registrations</strong><button class="btn secondary sm" data-tab="rsvp">Review signup list ↗</button></div><p class="small muted">Track applications, waitlists, approvals and conflicting events.</p></div><div class="headrow"><h2>${escapeHTML(fmtDay(day))}</h2></div>${dayChips()}${renderPosterPickup(day)}${eventList(items)}<div class="headrow"><h2>Don't miss</h2></div><div class="panel"><div class="kicker">Protected commitments</div><div class="linkrow"><div><strong class="card-title">Wed 9 · 17:00–20:00</strong><div class="small muted">Your main-track autoSAFE poster · Halls 1–4</div></div></div><div class="linkrow"><div><strong class="card-title">Fri 11 · 12:50–14:20</strong><div class="small muted">WRL poster window · Grand Ballroom B2/B3</div><div class="small muted">Individual assignment not verified</div></div></div><div class="linkrow"><div><strong class="card-title">Sat 12 · TAE poster</strong><div class="small muted">Either 11:00–12:00 or 14:15–15:00 · C2.2/C2.3</div></div></div></div><div class="headrow"><h2>Quick downloads</h2></div><div class="panel"><div class="context-actions"><button class="btn secondary sm" data-export-all>Download all events (.ics)</button>${link('NeurIPS_Focus.ics','Focused calendar')}${link('NeurIPS_Master.ics','Complete calendar')}${link('NeurIPS_Posters.ics','Poster visits')}</div></div>`}
+function renderToday(){const day=state.day;const items=allEvents().filter(e=>e.day===day && !(pickupEventTask[e.id] && isChecked(pickupEventTask[e.id])));const next=allEvents().filter(e=>e.day>=day && e.start).sort((a,b)=>(a.day+a.start).localeCompare(b.day+b.start)).slice(0,4);return `<div class="home-intro"><span class="pill green">Sydney · ${escapeHTML(currentSydneyTime())} AEDT</span><a class="pill venue-map-link" href="https://www.google.com/maps/search/?api=1&query=ICC%20Sydney%2C%2014%20Darling%20Drive%2C%20Sydney%20NSW%202000%2C%20Australia" target="_blank" rel="noopener noreferrer" aria-label="Open ICC Sydney in Google Maps">December 6–12 · ICC Sydney ↗</a></div><div class="headrow"><h2>Your week at a glance</h2><button class="btn secondary sm" data-tab="schedule">Full schedule ↗</button></div>${summary()}<div class="panel"><div class="headrow"><strong>Invitations & registrations</strong><button class="btn secondary sm" data-tab="rsvp">Review signup list ↗</button></div><p class="small muted">Track applications, waitlists, approvals and conflicting events.</p></div><div class="headrow"><h2>${escapeHTML(fmtDay(day))}</h2></div>${dayChips()}${renderPosterPickup(day)}${eventList(items)}<div class="headrow"><h2>Don't miss</h2></div><div class="panel"><div class="kicker">Protected commitments</div><div class="linkrow"><div><strong class="card-title">Wed 9 · 17:00–20:00</strong><div class="small muted">Your main-track autoSAFE poster · Halls 1–4</div></div></div><div class="linkrow"><div><strong class="card-title">Fri 11 · 12:50–14:20</strong><div class="small muted">WRL poster window · Grand Ballroom B2/B3</div><div class="small muted">Individual assignment not verified</div></div></div><div class="linkrow"><div><strong class="card-title">Sat 12 · TAE poster</strong><div class="small muted">Either 11:00–12:00 or 14:15–15:00 · C2.2/C2.3</div></div></div></div><div class="headrow"><h2>Quick downloads</h2></div><div class="panel"><div class="context-actions"><button class="btn secondary sm" data-export-all>Download all events (.ics)</button>${link('NeurIPS_Focus.ics','Focused calendar')}${link('NeurIPS_Master.ics','Complete calendar')}${link('NeurIPS_Posters.ics','Poster visits')}</div></div>`}
 function dayChips(){return `<div class="chips">${DAYS.map((d,i)=>`<button class="chip ${state.day===d?'active':''}" data-day="${d}">${DAY_NAMES[i]}</button>`).join('')}</div>`}
 // Day timeline: group long sessions separately so they don't obscure shorter overlaps.
 function renderTimeline(events) {
@@ -110,7 +126,6 @@ function renderSchedule(){
  <div class="chips">${choices.map(c=>`<button class="chip ${state.category===c?'active':''}" data-cat="${c}">${c==='all'?'All':c}</button>`).join('')}</div></div>
  <div class="schedule-top-controls"><div class="view-toggle" role="group" aria-label="Schedule display mode">${views.map(([value,label])=>`<button class="view-choice ${state.scheduleView===value?'active':''}" data-scheduleview="${value}" aria-pressed="${state.scheduleView===value}">${label}</button>`).join('')}</div><button class="btn secondary sm" data-export-all>All events (.ics)</button></div>
  <h2>${escapeHTML(fmtDay(state.day))}</h2>
- ${renderPosterPickup(state.day)}
  ${state.scheduleView==='calendar'?renderTimeline(evs):eventList(evs)}
 `;
 }
@@ -177,5 +192,15 @@ document.addEventListener('input',ev=>{if(ev.target.id==='eventSearch'){const i=
 document.addEventListener('submit',ev=>{if(ev.target.id==='addTask'){ev.preventDefault();const title=$('#newTask').value.trim();if(!title)return;store.tasks.push({id:'personal-'+Date.now(),title,priority:3,due:''});save();render();toast('Task added')}});
 document.addEventListener('change',ev=>{if(ev.target.dataset.rsvp){store.settings.rsvps=store.settings.rsvps||{};store.settings.rsvps[ev.target.dataset.rsvp]=ev.target.value;save();render();return}if(ev.target.id==='importFile'&&ev.target.files[0])importBackup(ev.target.files[0])});
 $('#closeSheet').addEventListener('click',closeSheet);$('#overlay').addEventListener('click',ev=>{if(ev.target.id==='overlay')closeSheet()});$('#menuButton').addEventListener('click',showMenu);
+let lastSydneyDate=todaySydney();
+function updateConferenceDayOnResume(){
+ const current=todaySydney();
+ if(current===lastSydneyDate)return;
+ lastSydneyDate=current;
+ state.day=initialDay();
+ if(state.tab==='today'||state.tab==='schedule')render();
+}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateConferenceDayOnResume()});
+window.addEventListener('pageshow',updateConferenceDayOnResume);
 async function init(){try{const r=await fetch('guide.json');if(!r.ok)throw Error(`HTTP ${r.status}`);guide=await r.json();try{const reg=await fetch('registrations.json');if(reg.ok)registrations=await reg.json()}catch(e){console.warn('Registration list unavailable offline',e)}if(!guide.events||!guide.posters||!guide.booths||!guide.todos)throw Error('Incomplete data');render();if('serviceWorker' in navigator&&['https:','http:'].includes(location.protocol)){navigator.serviceWorker.register('./sw.js').catch(()=>{})}}catch(e){$('#main').innerHTML=`<div class="panel"><h2>Guide couldn't load</h2><p class="explain">Open the app through an HTTPS server or localhost. Directly opening index.html with file:// does not load JSON in some browsers.</p><p class="small">${escapeHTML(e.message)}</p></div>`}}
 init();
