@@ -988,6 +988,12 @@
       "title": "Check exhibitor floor plan on arrival",
       "priority": 4,
       "due": "2026-12-07"
+    },
+    {
+      "id": "t-poster-pickup",
+      "title": "Collect printed poster — Exhibition Centre Level 2, Registration Desk 4 (Mon–Sat)",
+      "priority": 5,
+      "due": "2026-12-07"
     }
   ],
   "sources": [
@@ -1015,5 +1021,35 @@
       "name": "Expo talks",
       "url": "https://neurips.cc/Expo/Conferences/2026/Schedule_overview?presentation_type=All"
     }
-  ]
+  ],
+  "posterPickup": {
+    "title": "Collect printed poster",
+    "location": "ICC Sydney, Exhibition Centre, Level 2, Registration Desk 4, 14 Darling Drive, Sydney NSW 2000, Australia",
+    "hours": {
+      "2026-12-07": [
+        "08:00",
+        "17:00"
+      ],
+      "2026-12-08": [
+        "08:00",
+        "20:00"
+      ],
+      "2026-12-09": [
+        "08:00",
+        "20:00"
+      ],
+      "2026-12-10": [
+        "08:00",
+        "20:00"
+      ],
+      "2026-12-11": [
+        "07:00",
+        "15:30"
+      ],
+      "2026-12-12": [
+        "07:00",
+        "15:30"
+      ]
+    }
+  }
 }
