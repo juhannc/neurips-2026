@@ -68,7 +68,7 @@ for(const [iso,expected] of [
  ['2026-12-11T13:00:00Z','2026-12-12']
 ]){
  const fake={...Date,now:()=>Date.parse(iso)};
- const dayCtx={Intl,Date:class extends Date{constructor(){super(iso)}}};
+ const dayCtx={Intl,TZ:'Australia/Sydney',Date:class extends Date{constructor(){super(iso)}}};
  vm.runInNewContext(daySource+';this.day=todaySydney();',dayCtx);
  assert.equal(dayCtx.day,expected,'Wrong Sydney day at '+iso);
 }
