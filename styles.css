@@ -207,3 +207,13 @@ main{padding-bottom:calc(115px + env(safe-area-inset-bottom,0px))}
   }
   .topbar .brand,.topbar #menuButton{position:relative;z-index:1}
 }
+
+/* Onsite poster collection: compact six-day hours grid. */
+.poster-pickup{border-color:#4d7481}
+.poster-pickup .headrow{margin:0 0 8px}
+.poster-pickup h3{margin:0}
+.poster-pickup p{margin:7px 0}
+.pickup-hours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0}
+.pickup-hours span{padding:8px 4px;border-radius:8px;background:var(--surface2);font-size:10px;text-align:center;white-space:nowrap;color:var(--muted)}
+.pickup-hours span.selected{background:#214d50;color:#a9fbe6;font-weight:800;outline:1px solid #3b9e92}
+@media(min-width:650px){.pickup-hours{grid-template-columns:repeat(6,minmax(0,1fr))}}
