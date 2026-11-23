@@ -559,6 +559,62 @@
       "url": "https://qrsntu.org/service/neurips26/event/180203/",
       "status": "optional",
       "kind": "conference"
+    },
+    {
+      "id": "pickup-main",
+      "day": "2026-12-09",
+      "start": "15:00",
+      "end": "15:20",
+      "title": "Pick up autoSAFE poster — before 17:00 session",
+      "category": "Presentation",
+      "location": "ICC Sydney, Exhibition Centre, Level 2, Registration Desk 4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Collect shortly before your main-track poster presentation; session starts at 17:00. Poster collection: Exhibition Centre Level 2, Registration Desk 4. See the ICC Sydney Level 2 floor plan.",
+      "url": "https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-plans_level-two.pdf",
+      "status": "planned",
+      "kind": "personal"
+    },
+    {
+      "id": "pickup-wrl",
+      "day": "2026-12-11",
+      "start": "10:50",
+      "end": "11:10",
+      "title": "Pick up Robot Learning workshop poster",
+      "category": "Presentation",
+      "location": "ICC Sydney, Exhibition Centre, Level 2, Registration Desk 4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Two hours before the 12:50 WRL poster window. Individual poster assignment not confirmed. Poster collection: Exhibition Centre Level 2, Registration Desk 4. See the ICC Sydney Level 2 floor plan.",
+      "url": "https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-plans_level-two.pdf",
+      "status": "assignment-unverified",
+      "kind": "personal"
+    },
+    {
+      "id": "pickup-tae-1",
+      "day": "2026-12-12",
+      "start": "09:00",
+      "end": "09:20",
+      "title": "Pick up TAE poster — if assigned 11:00 session",
+      "category": "Presentation",
+      "location": "ICC Sydney, Exhibition Centre, Level 2, Registration Desk 4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Alternative A only: collect two hours before a potential 11:00 TAE session. Ignore if assigned to the afternoon. Poster collection: Exhibition Centre Level 2, Registration Desk 4. See the ICC Sydney Level 2 floor plan.",
+      "url": "https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-plans_level-two.pdf",
+      "status": "assignment-unverified",
+      "kind": "personal"
+    },
+    {
+      "id": "pickup-tae-2",
+      "day": "2026-12-12",
+      "start": "12:15",
+      "end": "12:35",
+      "title": "Pick up TAE poster — if assigned 14:15 session",
+      "category": "Presentation",
+      "location": "ICC Sydney, Exhibition Centre, Level 2, Registration Desk 4, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Alternative B only: collect two hours before a potential 14:15 TAE session. Ignore if assigned to the morning. Poster collection: Exhibition Centre Level 2, Registration Desk 4. See the ICC Sydney Level 2 floor plan.",
+      "url": "https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-plans_level-two.pdf",
+      "status": "assignment-unverified",
+      "kind": "personal"
     }
   ],
   "posters": [
@@ -991,9 +1047,21 @@
     },
     {
       "id": "t-poster-pickup",
-      "title": "Collect printed poster — Exhibition Centre Level 2, Registration Desk 4 (Mon–Sat)",
+      "title": "Pick up autoSAFE main-track poster — Wed 9 Dec, 15:00 · Registration Desk 4",
       "priority": 5,
       "due": "2026-12-07"
+    },
+    {
+      "id": "t-poster-pickup-wrl",
+      "title": "Pick up Robot Learning poster — Fri 11 Dec, 10:50 (assignment to verify)",
+      "priority": 5,
+      "due": "2026-12-11"
+    },
+    {
+      "id": "t-poster-pickup-tae",
+      "title": "Pick up TAE poster — Sat 12 Dec, 2 hours before your assigned poster session",
+      "priority": 5,
+      "due": "2026-12-12"
     }
   ],
   "sources": [
@@ -1050,6 +1118,8 @@
         "07:00",
         "15:30"
       ]
-    }
+    },
+    "floorPlanUrl": "https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-plans_level-two.pdf",
+    "wayfinding": "Exhibition Centre, Level 2 concourse. Find Registration 4 (outside Hall 4) on the ICC Sydney Level 2 plan. This is a static floor plan, not live indoor navigation."
   }
 }
