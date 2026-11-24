@@ -615,6 +615,68 @@
       "url": "https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-plans_level-two.pdf",
       "status": "assignment-unverified",
       "kind": "personal"
+    },
+    {
+      "id": "drw-opt-tue",
+      "day": "2026-12-08",
+      "start": "11:00",
+      "title": "DRW booth 95 — Symmetry-Compatible Optimizer Design",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, DRW Booth 95, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Optimizer principle matching updates to parameter symmetries in embeddings, LM heads, SwiGLU MLPs and MoE routers, tested in LM pre-training. Announced by DRW email dated 23 Nov 2026. Start time confirmed; duration/end time not provided. Booth 95.",
+      "status": "start-confirmed-duration-unknown",
+      "kind": "conference"
+    },
+    {
+      "id": "drw-conformal-tue",
+      "day": "2026-12-08",
+      "start": "14:00",
+      "title": "DRW booth 95 — Filtered Conformal Ellipsoids",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, DRW Booth 95, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Joint multivariate prediction regions using a latent-state filter and conformal coverage calibration, applied to options risk limits, sizing and hedging. Announced by DRW email dated 23 Nov 2026. Start time confirmed; duration/end time not provided. Booth 95.",
+      "status": "start-confirmed-duration-unknown",
+      "kind": "conference"
+    },
+    {
+      "id": "drw-conformal-wed",
+      "day": "2026-12-09",
+      "start": "11:00",
+      "title": "DRW booth 95 — Filtered Conformal Ellipsoids",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, DRW Booth 95, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Repeat of Tuesday 14:00 talk: calibrated joint prediction regions for multivariate time series and options risk management. Announced by DRW email dated 23 Nov 2026. Start time confirmed; duration/end time not provided. Booth 95.",
+      "status": "start-confirmed-duration-unknown",
+      "kind": "conference"
+    },
+    {
+      "id": "drw-opt-wed",
+      "day": "2026-12-09",
+      "start": "14:00",
+      "title": "DRW booth 95 — Symmetry-Compatible Optimizer Design",
+      "category": "Expo",
+      "location": "ICC Sydney, Exhibition Centre Level 4, Halls 5–7, DRW Booth 95, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 4,
+      "notes": "Repeat of Tuesday 11:00 talk: symmetry-constrained optimizers for embeddings, LM heads, gated MLPs and MoE routers. Announced by DRW email dated 23 Nov 2026. Start time confirmed; duration/end time not provided. Booth 95.",
+      "status": "start-confirmed-duration-unknown",
+      "kind": "conference"
+    },
+    {
+      "id": "drw-bandara-expo",
+      "day": "2026-12-06",
+      "start": "12:00",
+      "end": "13:00",
+      "title": "DRW — Continual Learning in Non-Stationary Environments",
+      "category": "Research",
+      "location": "ICC Sydney, Darling Harbour Theatre, 14 Darling Drive, Sydney NSW 2000, Australia",
+      "priority": 5,
+      "notes": "Wachi Bandara, DRW Head of AI. Expo talk on continual learning in non-stationary environments; confirmed in published NeurIPS Expo schedule. Conflicts with other noon expo talks.",
+      "url": "https://qrsntu.org/service/neurips26/event/180192/",
+      "status": "published",
+      "kind": "conference"
     }
   ],
   "posters": [
@@ -970,6 +1032,37 @@
       "pitch": "Human evaluation datasets and reliable evaluation.",
       "url": "https://luma.com/prolific-at-neurips2026",
       "confirmed": true
+    },
+    {
+      "id": "b-drw",
+      "name": "DRW",
+      "booth": "95",
+      "priority": 5,
+      "confirmed": true,
+      "pitch": "Talk to the ML/trading team about calibrated multivariate uncertainty, filtered conformal prediction under distribution shift, and research/open roles. Booth talks: optimizer symmetry (Tue 11:00, Wed 14:00); conformal ellipsoids for options risk (Tue 14:00, Wed 11:00).",
+      "url": "https://www.drw.com/",
+      "talks": [
+        {
+          "title": "Symmetry-Compatible Principle for Optimizer Design",
+          "day": "2026-12-08",
+          "start": "11:00"
+        },
+        {
+          "title": "Filtered Conformal Ellipsoids in an Options Trading Context",
+          "day": "2026-12-08",
+          "start": "14:00"
+        },
+        {
+          "title": "Filtered Conformal Ellipsoids in an Options Trading Context",
+          "day": "2026-12-09",
+          "start": "11:00"
+        },
+        {
+          "title": "Symmetry-Compatible Principle for Optimizer Design",
+          "day": "2026-12-09",
+          "start": "14:00"
+        }
+      ]
     }
   ],
   "todos": [
@@ -1088,6 +1181,10 @@
     {
       "name": "Expo talks",
       "url": "https://neurips.cc/Expo/Conferences/2026/Schedule_overview?presentation_type=All"
+    },
+    {
+      "name": "DRW NeurIPS booth 95 email (23 Nov 2026) — supplied by attendee",
+      "url": "https://www.drw.com/"
     }
   ],
   "posterPickup": {
