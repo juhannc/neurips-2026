@@ -25,6 +25,23 @@ for(const [id,day,time] of pickupSlots){
 }
 assert(guide.posterPickup.floorPlanUrl.includes('level-two.pdf'));
 
+const drwBooth=guide.booths.find(b=>b.id==='b-drw');
+assert(drwBooth && drwBooth.booth==='95' && drwBooth.confirmed);
+assert.equal(drwBooth.talks.length,4);
+const drwTalks=guide.events.filter(e=>e.id.startsWith('drw-opt-')||e.id.startsWith('drw-conformal-'));
+assert.equal(drwTalks.length,4);
+for(const e of drwTalks){
+ assert(!e.end,'Unpublished booth talk duration must not be guessed');
+ const item=context.buildSingle(e).join('\\r\\n');
+ assert(item.includes('DTSTART;TZID=Australia/Sydney:'+e.day.replace(/-/g,'')+'T'+e.start.replace(':','')+'00'));
+ assert(!item.includes('DTEND'), 'Start-only booth talks should not invent an end time');
+ assert(item.includes('TRANSP:TRANSPARENT'));
+}
+const bandara=guide.events.find(e=>e.id==='drw-bandara-expo');
+assert(bandara && bandara.start==='12:00' && bandara.end==='13:00');
+assert.equal(bandara.location.includes('Darling Harbour Theatre'),true);
+
+
 assert.equal((ics.match(/BEGIN:VEVENT/g)||[]).length,guide.events.length);
 assert(ics.includes('TZID:Australia/Sydney'));
 assert(ics.includes('20261208T180000'));
