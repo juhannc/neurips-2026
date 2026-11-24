@@ -25,6 +25,15 @@ for(const [id,day,time] of pickupSlots){
 }
 assert(guide.posterPickup.floorPlanUrl.includes('level-two.pdf'));
 
+const subscriptionSection=source.slice(source.indexOf('const subscribedCalendarLinks='),source.indexOf('function eventCard(e){'));
+assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_Focus.ics'));
+assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_Master.ics'));
+assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_Posters.ics'));
+assert(source.includes('navigator.canShare({files:[file]})'));
+assert(source.includes("navigator.share({files:[file]"));
+assert(!source.includes("${link('NeurIPS_Focus.ics','Focused calendar')}"));
+
+
 const drwBooth=guide.booths.find(b=>b.id==='b-drw');
 assert(drwBooth && drwBooth.booth==='95' && drwBooth.confirmed);
 assert.equal(drwBooth.talks.length,4);
