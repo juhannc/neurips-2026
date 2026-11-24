@@ -404,4 +404,47 @@ URL:https://iccsydney.com.au/wp-content/uploads/2023/05/icc-sydney_floor-pl
  ans_level-two.pdf
 STATUS:TENTATIVE
 END:VEVENT
+BEGIN:VEVENT
+UID:drw-conformal-tue.neurips2026@personal-guide
+DTSTAMP:20261124T080000Z
+SUMMARY:DRW booth 95 — Filtered Conformal Ellipsoids
+DTSTART;TZID=Australia/Sydney:20261208T140000
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+LOCATION:ICC Sydney\, Exhibition Centre Level 4\, Halls 5–7\, DRW Booth 9
+ 5\, 14 Darling Drive\, Sydney NSW 2000\, Australia
+DESCRIPTION:Joint multivariate prediction regions using a latent-state filt
+ er and conformal coverage calibration\, applied to options risk limits\, s
+ izing and hedging. Announced by DRW email dated 23 Nov 2026. Start time co
+ nfirmed\; duration/end time not provided. Booth 95.\\nEnd time not publish
+ ed\; this is an instant start-time marker.
+END:VEVENT
+BEGIN:VEVENT
+UID:drw-conformal-wed.neurips2026@personal-guide
+DTSTAMP:20261124T080000Z
+SUMMARY:DRW booth 95 — Filtered Conformal Ellipsoids
+DTSTART;TZID=Australia/Sydney:20261209T110000
+TRANSP:TRANSPARENT
+STATUS:TENTATIVE
+LOCATION:ICC Sydney\, Exhibition Centre Level 4\, Halls 5–7\, DRW Booth 9
+ 5\, 14 Darling Drive\, Sydney NSW 2000\, Australia
+DESCRIPTION:Repeat of Tuesday 14:00 talk: calibrated joint prediction regio
+ ns for multivariate time series and options risk management. Announced by 
+ DRW email dated 23 Nov 2026. Start time confirmed\; duration/end time not 
+ provided. Booth 95.\\nEnd time not published\; this is an instant start-ti
+ me marker.
+END:VEVENT
+BEGIN:VEVENT
+UID:drw-bandara-expo.neurips2026@personal-guide
+DTSTAMP:20261124T080000Z
+SUMMARY:DRW — Continual Learning in Non-Stationary Environments
+DTSTART;TZID=Australia/Sydney:20261206T120000
+DTEND;TZID=Australia/Sydney:20261206T130000
+LOCATION:ICC Sydney\, Darling Harbour Theatre\, 14 Darling Drive\, Sydney N
+ SW 2000\, Australia
+DESCRIPTION:Wachi Bandara\, DRW Head of AI. Expo talk on continual learning
+  in non-stationary environments\; confirmed in published NeurIPS Expo sche
+ dule. Conflicts with other noon expo talks.
+URL:https://qrsntu.org/service/neurips26/event/180192/
+END:VEVENT
 END:VCALENDAR
