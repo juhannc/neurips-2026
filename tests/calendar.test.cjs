@@ -53,7 +53,7 @@ assert.equal(shortcutCtx.url({...sampleEvent,end:undefined}),null);
 assert.equal(shortcutCtx.url({...sampleEvent,end:'14:00'}),null);
 
 assert(source.includes('data-add-calendar='));
-assert(source.includes('Copy details for Apple Calendar'));
+assert(source.includes('Copy event details'));
 assert(source.includes('Subscribe in Apple Calendar'));
 assert(!source.includes('>.ics ↗</button>'));
 
