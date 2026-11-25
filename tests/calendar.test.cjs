@@ -30,6 +30,12 @@ assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_F
 assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_Master.ics'));
 assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_Posters.ics'));
 assert(source.includes('navigator.canShare({files:[file]})'));
+assert(source.includes('function showAddEventOptions(e)'));
+assert(source.includes('data-add-calendar='));
+assert(source.includes('Copy details for Apple Calendar'));
+assert(source.includes('Subscribe in Apple Calendar'));
+assert(!source.includes('>.ics ↗</button>'));
+
 assert(source.includes("navigator.share({files:[file]"));
 assert(!source.includes("${link('NeurIPS_Focus.ics','Focused calendar')}"));
 
