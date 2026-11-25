@@ -1,0 +1,33 @@
+name: Sign Apple Calendar Shortcut
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'shortcuts/build_shortcut.py'
+      - '.github/workflows/sign-shortcut.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sign:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate native Shortcut
+        run: python3 shortcuts/build_shortcut.py
+      - name: Sign with Apple's Shortcuts tool
+        run: |
+          shortcuts sign --mode anyone --input "shortcuts/NeurIPS Add Event.unsigned.shortcut" --output "shortcuts/NeurIPS Add Event.shortcut"
+          file "shortcuts/NeurIPS Add Event.shortcut"
+          test -s "shortcuts/NeurIPS Add Event.shortcut"
+      - name: Upload installable signed Shortcut
+        uses: actions/upload-artifact@v4
+        with:
+          name: NeurIPS-Add-Event-Shortcut
+          path: shortcuts/NeurIPS Add Event.shortcut
+      - name: Publish signed Shortcut to repository for direct installation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "shortcuts/NeurIPS Add Event.shortcut"
+          git diff --cached --quiet || (git commit -m "Publish signed Apple Calendar Shortcut" && git push)
