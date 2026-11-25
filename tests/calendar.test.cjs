@@ -31,6 +31,27 @@ assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_M
 assert(subscriptionSection.includes('webcal://neurips-2026.chrstnsn.de/NeurIPS_Posters.ics'));
 assert(source.includes('navigator.canShare({files:[file]})'));
 assert(source.includes('function showAddEventOptions(e)'));
+
+assert(source.includes("const APPLE_SHORTCUT_NAME='NeurIPS Add Event'"));
+assert(source.includes('shortcuts://run-shortcut?'));
+assert(source.includes('function shortcutCalendarSetup()'));
+const shortcutSource=source.slice(source.indexOf('const APPLE_SHORTCUT_NAME='),source.indexOf('let pendingCalendarEventText='));
+const shortcutCtx={URLSearchParams};
+vm.runInNewContext(shortcutSource+';this.payload=shortcutCalendarPayload;this.url=shortcutCalendarURL;',shortcutCtx);
+const sampleEvent={day:'2026-12-09',start:'15:00',end:'15:20',title:'Poster pickup',location:'ICC Sydney',notes:'Registration 4'};
+const shortcutPayload=shortcutCtx.payload(sampleEvent);
+assert.equal(shortcutPayload.start,'2026-12-09T15:00:00+11:00');
+assert.equal(shortcutPayload.end,'2026-12-09T15:20:00+11:00');
+const shortcutURL=shortcutCtx.url(sampleEvent);
+assert(shortcutURL.startsWith('shortcuts://run-shortcut?'));
+const shortcutArgs=new URL(shortcutURL).searchParams;
+assert.equal(shortcutArgs.get('name'),'NeurIPS Add Event');
+assert.equal(shortcutArgs.get('input'),'text');
+assert.equal(JSON.parse(shortcutArgs.get('text')).title,'Poster pickup');
+assert.equal(JSON.parse(shortcutArgs.get('text')).location,'ICC Sydney');
+assert.equal(shortcutCtx.url({...sampleEvent,end:undefined}),null);
+assert.equal(shortcutCtx.url({...sampleEvent,end:'14:00'}),null);
+
 assert(source.includes('data-add-calendar='));
 assert(source.includes('Copy details for Apple Calendar'));
 assert(source.includes('Subscribe in Apple Calendar'));
