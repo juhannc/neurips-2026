@@ -98,9 +98,9 @@ function googleCalendarEventURL(e){
 // so events remain correct even if the phone is still on Central European time.
 const APPLE_SHORTCUT_NAME='NeurIPS Add Event';
 function shortcutCalendarPayload(e){
- if(!e || !/^\\d{4}-\\d{2}-\\d{2}$/.test(e.day||'') ||
-    !/^([01]\\d|2[0-3]):[0-5]\\d$/.test(e.start||'') ||
-    !/^([01]\\d|2[0-3]):[0-5]\\d$/.test(e.end||'') ||
+ if(!e || !/^\d{4}-\d{2}-\d{2}$/.test(e.day||'') ||
+    !/^([01]\d|2[0-3]):[0-5]\d$/.test(e.start||'') ||
+    !/^([01]\d|2[0-3]):[0-5]\d$/.test(e.end||'') ||
     e.end<=e.start)return null;
  const toISO=time=>e.day+'T'+time+':00+11:00';
  return {
@@ -108,7 +108,7 @@ function shortcutCalendarPayload(e){
   start:toISO(e.start),
   end:toISO(e.end),
   location:e.location||'',
-  notes:[e.notes||'',e.url||''].filter(Boolean).join('\\n').slice(0,600)
+  notes:[e.notes||'',e.url||''].filter(Boolean).join('\n').slice(0,600)
  };
 }
 function shortcutCalendarURL(e){
