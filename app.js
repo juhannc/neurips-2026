@@ -94,59 +94,19 @@ function googleCalendarEventURL(e){
  const q=new URLSearchParams({action:'TEMPLATE',text:e.title,dates:stamp(e.start)+'/'+stamp(e.end),ctz:TZ,details:e.notes||'',location:e.location||''});
  return 'https://calendar.google.com/calendar/render?'+q.toString();
 }
-// Apple Shortcuts URL handoff. The ISO timestamps include Sydney's +11:00 offset,
-// so events remain correct even if the phone is still on Central European time.
-const APPLE_SHORTCUT_NAME='NeurIPS Add Event';
-function shortcutCalendarPayload(e){
- if(!e || !/^\d{4}-\d{2}-\d{2}$/.test(e.day||'') ||
-    !/^([01]\d|2[0-3]):[0-5]\d$/.test(e.start||'') ||
-    !/^([01]\d|2[0-3]):[0-5]\d$/.test(e.end||'') ||
-    e.end<=e.start)return null;
- const toISO=time=>e.day+'T'+time+':00+11:00';
- return {
-  title:e.title,
-  start:toISO(e.start),
-  end:toISO(e.end),
-  location:e.location||'',
-  notes:[e.notes||'',e.url||''].filter(Boolean).join('\n').slice(0,600)
- };
-}
-function shortcutCalendarURL(e){
- const payload=shortcutCalendarPayload(e);
- if(!payload)return null;
- const q=new URLSearchParams({name:APPLE_SHORTCUT_NAME,input:'text',text:JSON.stringify(payload)});
- return 'shortcuts://run-shortcut?'+q.toString();
-}
-function shortcutCalendarSetup(){
- showSheet('Set up Apple Calendar shortcut',`<div class="detail">
- <p>This one-time Apple Shortcuts workflow creates an editable event in your existing Apple Calendar. It does <strong>not</strong> subscribe to a new calendar.</p>
- <ol class="shortcut-steps">
- <li>Open <strong>Shortcuts</strong> on your iPhone, tap <strong>+</strong>, and name it exactly <strong>${APPLE_SHORTCUT_NAME}</strong>.</li>
- <li>Add <strong>Get Dictionary from Input</strong>. Set its input to <strong>Shortcut Input</strong> (as Text).</li>
- <li>Add four <strong>Get Dictionary Value</strong> actions, with keys <code>title</code>, <code>start</code>, <code>end</code>, and <code>location</code>, each reading from the dictionary in step 2. Save each result using <strong>Set Variable</strong> to Title, StartText, EndText, and Venue.</li>
- <li>Add a fifth dictionary lookup for <code>notes</code> and set variable Notes.</li>
- <li>Add two <strong>Get Dates from Input</strong> actions: first from StartText, then from EndText. Save each parsed date to StartDate and EndDate.</li>
- <li>Add Calendar's <strong>Add New Event</strong> action. Set Title=Title, Start Date=StartDate, End Date=EndDate, Location=Venue and Notes=Notes. Expand the action and turn on <strong>Show Compose Sheet</strong>. Select your regular calendar, or use Ask Each Time where available.</li>
- <li>Save the shortcut. Back here, open a timed event and tap <strong>Add via Apple Shortcuts</strong> to test. Review the event in the Calendar compose sheet before saving.</li>
- </ol>
- <p class="small muted">This needs to be set up once on the iPhone. The PWA only passes event details; Calendar permission and final saving happen in Shortcuts.</p>
- <div class="context-actions"><a class="btn secondary sm" href="shortcuts://">Open Shortcuts ↗</a><button class="btn secondary sm" data-copy-shortcut-name>Copy shortcut name</button></div>
- </div>`);
-}
 let pendingCalendarEventText='';
 function showAddEventOptions(e){
  pendingCalendarEventText=calendarEventDetails(e);
- const direct=shortcutCalendarURL(e);
  const google=googleCalendarEventURL(e);
  showSheet('Add to calendar',`<div class="detail">
  <h3>${escapeHTML(e.title)}</h3>
- <p class="small">${escapeHTML(e.day)} · ${escapeHTML(e.start||'Time TBC')}${e.end?'–'+escapeHTML(e.end):' (end time TBC)'} · Sydney time (AEDT)</p>
- <p><strong>Apple Calendar · your existing calendar</strong></p>
- ${direct?`<div class="context-actions"><a class="btn" href="${escapeHTML(direct)}">Add via Apple Shortcuts ↗</a><button class="btn secondary sm" data-shortcut-setup>One-time setup</button></div><p class="small muted">The shortcut opens an editable Calendar event with the correct Sydney timezone. You review it before saving.</p>`:`<p class="small muted">An exact end time isn't available; the shortcut will not invent a duration. You can copy the details and enter the event manually.</p><div class="context-actions"><button class="btn secondary sm" data-shortcut-setup>Set up Apple Shortcuts</button></div>`}
- <div class="context-actions"><button class="btn secondary sm" data-copy-event-details>Copy event details</button>${google?`<a class="btn secondary sm" href="${escapeHTML(google)}" target="_blank" rel="noopener noreferrer">Google Calendar ↗</a>`:''}</div>
- <div class="divider"></div>
- <p class="small muted">Alternative: a read-only Apple Calendar subscription shows all conference events without copying them into your personal calendar.</p>
- <div class="context-actions"><button class="btn secondary sm" data-export-event="${escapeHTML(e.id)}">Share .ics file</button></div>
+ <p class="small">${escapeHTML(e.day)} · ${escapeHTML(e.start||'Time TBC')}${e.end?'–'+escapeHTML(e.end):' (end time TBC)'} · Sydney time</p>
+ <p><strong>Apple Calendar:</strong> Subscribe to the complete NeurIPS calendar to show all conference events automatically. It is a read-only calendar, not a personal event import.</p>
+ <div class="context-actions"><a class="btn secondary sm" href="webcal://neurips-2026.chrstnsn.de/NeurIPS_Master.ics">Subscribe in Apple Calendar</a><button class="btn secondary sm" data-copy-subscription="complete">Copy feed URL</button></div>
+ <p><strong>Single editable event:</strong> ${google?'Open the prefilled event in Google Calendar and save it there, if you use Google Calendar.':'The exact start and end are not both confirmed, so an editable event would require guessing a duration.'}</p>
+ <div class="context-actions">${google?`<a class="btn secondary sm" href="${escapeHTML(google)}" target="_blank" rel="noopener noreferrer">Add in Google Calendar ↗</a>`:''}<button class="btn secondary sm" data-copy-event-details>Copy details for Apple Calendar</button></div>
+ <p class="small muted">An .ics file shared from an iPhone PWA does not automatically add an event. If you only want the file, use the export button below.</p>
+ <div class="context-actions"><button class="btn secondary sm" data-export-event="${escapeHTML(e.id)}">Export .ics file</button></div>
  </div>`);
 }
 const subscribedCalendarLinks={
@@ -305,7 +265,7 @@ function toast(t){$('#toast').textContent=t;$('#toast').classList.remove('hidden
 function download(filename,content,mime){const blob=new Blob([content],{type:mime});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)}
 function showMenu(){showSheet('Guide & settings',`<div class="detail"><p><strong>Sydney time zone:</strong> Australia/Sydney (AEDT, UTC+11 during the conference).</p><p><strong>Install on iPhone:</strong> Open the hosted URL in Safari, tap Share → Add to Home Screen → Add.</p><p><strong>Offline:</strong> Once loaded over HTTPS, the service worker caches the app and guide data. External websites and map links still need connectivity.</p><div class="context-actions"><button class="btn secondary sm" data-export-all>Share all events (.ics)</button></div>${calendarSubscriptions()}<div class="divider"></div><h3>Sources</h3>${guide.sources.map(s=>`<p>${link(s.url,s.name)}</p>`).join('')}<div class="divider"></div><h3>Privacy and backup</h3><p>All notes, checklists and custom tasks remain on this device unless you export them.</p><div class="context-actions"><button class="btn secondary sm" data-action="export">Export backup</button><button class="btn secondary sm" data-action="import">Import backup</button><input id="importFile" type="file" accept=".json,application/json" hidden></div></div>`)}
 async function importBackup(file){try{const obj=JSON.parse(await file.text());if(!obj||typeof obj!=='object'||!obj.checks||!obj.notes||!Array.isArray(obj.tasks))throw Error('Invalid file');if(!confirm('Replace saved notes and tasks with this backup?'))return;store={checks:obj.checks,notes:obj.notes,tasks:obj.tasks,addedEvents:Array.isArray(obj.addedEvents)?obj.addedEvents:[],settings:obj.settings||{}};save();closeSheet();render();toast('Backup restored')}catch(err){toast('Could not import this backup')}}
-document.addEventListener('click',ev=>{const btn=ev.target.closest('button,[data-open],.schedule-card');if(!btn)return;if(btn.hasAttribute('data-export-all')){exportCalendar(allEvents());return}else if(btn.dataset.exportEvent){const e=allEvents().find(e=>e.id===btn.dataset.exportEvent);if(e)exportCalendar([e]);return}else if(btn.hasAttribute('data-shortcut-setup')){shortcutCalendarSetup();return}else if(btn.hasAttribute('data-copy-shortcut-name')){if(navigator.clipboard?.writeText)navigator.clipboard.writeText(APPLE_SHORTCUT_NAME).then(()=>toast('Shortcut name copied'),()=>toast('Copy unavailable'));return}else if(btn.dataset.addCalendar){const e=allEvents().find(e=>e.id===btn.dataset.addCalendar);if(e)showAddEventOptions(e);return}else if(btn.hasAttribute('data-copy-event-details')){if(navigator.clipboard?.writeText)navigator.clipboard.writeText(pendingCalendarEventText).then(()=>toast('Event details copied'),()=>toast('Copy unavailable'));else toast('Copy unavailable');return}else if(btn.hasAttribute('data-calendar-instructions')){calendarSubscriptionHelp();return}else if(btn.dataset.copySubscription){const file=subscribedCalendarLinks[btn.dataset.copySubscription];if(file){navigator.clipboard?.writeText('https://neurips-2026.chrstnsn.de/'+file).then(()=>toast('Calendar URL copied'),()=>toast('Copy unavailable'))}return}else if(btn.dataset.copyCalendar){navigator.clipboard?.writeText(pendingCalendarCopy).then(()=>toast('Calendar text copied'),()=>toast('Copy unavailable'));return}else if(btn.dataset.tab){state.tab=btn.dataset.tab;setDockCollapsed(true);render();window.scrollTo(0,0)}else if(btn.dataset.day){state.day=btn.dataset.day;render()}else if(btn.dataset.cat){state.category=btn.dataset.cat;render()}else if(btn.dataset.scheduleview){state.scheduleView=btn.dataset.scheduleview;render()}else if(btn.dataset.session){state.session=btn.dataset.session;render()}else if(btn.dataset.expofilter){state.expoFilter=btn.dataset.expofilter;render()}else if(btn.dataset.taskfilter){state.taskFilter=btn.dataset.taskfilter;render()}else if(btn.dataset.rsvpfilter){state.rsvpFilter=btn.dataset.rsvpfilter;render()}else if(btn.dataset.check){toggle(btn.dataset.check)}else if(btn.dataset.open){const [type,id]=btn.dataset.open.split(':');openDetail(type,id)}else if(btn.dataset.saveNote){const input=$('#noteEdit');store.notes[btn.dataset.saveNote]=input.value;save();closeSheet();toast('Notes saved')}else if(btn.dataset.removeTask){if(confirm('Delete this personal task?')){store.tasks=store.tasks.filter(x=>x.id!==btn.dataset.removeTask);save();render()}}else if(btn.dataset.action==='export'){download('neurips-guide-backup.json',JSON.stringify({...store,exportedAt:new Date().toISOString()},null,2),'application/json')}else if(btn.dataset.action==='import'){$('#importFile').click()}});
+document.addEventListener('click',ev=>{const btn=ev.target.closest('button,[data-open],.schedule-card');if(!btn)return;if(btn.hasAttribute('data-export-all')){exportCalendar(allEvents());return}else if(btn.dataset.exportEvent){const e=allEvents().find(e=>e.id===btn.dataset.exportEvent);if(e)exportCalendar([e]);return}else if(btn.dataset.addCalendar){const e=allEvents().find(e=>e.id===btn.dataset.addCalendar);if(e)showAddEventOptions(e);return}else if(btn.hasAttribute('data-copy-event-details')){if(navigator.clipboard?.writeText)navigator.clipboard.writeText(pendingCalendarEventText).then(()=>toast('Event details copied'),()=>toast('Copy unavailable'));else toast('Copy unavailable');return}else if(btn.hasAttribute('data-calendar-instructions')){calendarSubscriptionHelp();return}else if(btn.dataset.copySubscription){const file=subscribedCalendarLinks[btn.dataset.copySubscription];if(file){navigator.clipboard?.writeText('https://neurips-2026.chrstnsn.de/'+file).then(()=>toast('Calendar URL copied'),()=>toast('Copy unavailable'))}return}else if(btn.dataset.copyCalendar){navigator.clipboard?.writeText(pendingCalendarCopy).then(()=>toast('Calendar text copied'),()=>toast('Copy unavailable'));return}else if(btn.dataset.tab){state.tab=btn.dataset.tab;setDockCollapsed(true);render();window.scrollTo(0,0)}else if(btn.dataset.day){state.day=btn.dataset.day;render()}else if(btn.dataset.cat){state.category=btn.dataset.cat;render()}else if(btn.dataset.scheduleview){state.scheduleView=btn.dataset.scheduleview;render()}else if(btn.dataset.session){state.session=btn.dataset.session;render()}else if(btn.dataset.expofilter){state.expoFilter=btn.dataset.expofilter;render()}else if(btn.dataset.taskfilter){state.taskFilter=btn.dataset.taskfilter;render()}else if(btn.dataset.rsvpfilter){state.rsvpFilter=btn.dataset.rsvpfilter;render()}else if(btn.dataset.check){toggle(btn.dataset.check)}else if(btn.dataset.open){const [type,id]=btn.dataset.open.split(':');openDetail(type,id)}else if(btn.dataset.saveNote){const input=$('#noteEdit');store.notes[btn.dataset.saveNote]=input.value;save();closeSheet();toast('Notes saved')}else if(btn.dataset.removeTask){if(confirm('Delete this personal task?')){store.tasks=store.tasks.filter(x=>x.id!==btn.dataset.removeTask);save();render()}}else if(btn.dataset.action==='export'){download('neurips-guide-backup.json',JSON.stringify({...store,exportedAt:new Date().toISOString()},null,2),'application/json')}else if(btn.dataset.action==='import'){$('#importFile').click()}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeSheet();if((ev.key==='Enter'||ev.key===' ')&&ev.target.matches('.schedule-card')){ev.preventDefault();ev.target.click()}});
 document.addEventListener('input',ev=>{if(ev.target.id==='eventSearch'){const i=ev.target.selectionStart;state.search=ev.target.value;render();$('#eventSearch').focus();$('#eventSearch').setSelectionRange(i,i)}else if(ev.target.id==='posterSearch'){const i=ev.target.selectionStart;state.posterQuery=ev.target.value;render();$('#posterSearch').focus();$('#posterSearch').setSelectionRange(i,i)}});
 document.addEventListener('submit',ev=>{if(ev.target.id==='addTask'){ev.preventDefault();const title=$('#newTask').value.trim();if(!title)return;store.tasks.push({id:'personal-'+Date.now(),title,priority:3,due:''});save();render();toast('Task added')}});
